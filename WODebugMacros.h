@@ -8,7 +8,7 @@
 //! \file
 //! A collection of convenience and logging/debugging macros
 //!
-//! There are alternate definitions of the logging macros depending on whether the WO_DEBUG flag is passed to the preprocessor and compiler (either on the command line using the -D switch, or by specifying "-DDEBUG" in the "Other C Flags" field in the target build settings or style settings of Xcode). In general, development builds should set the WO_DEBUG flag, and the logging macros will produce more verbose output. In deployment or installation builds the WO_DEBUG glad should not be set, and the logging macros will produce less verbose (or no) output.
+//! There are alternate definitions of the logging macros depending on whether the WO_DEBUG flag is passed to the preprocessor and compiler (either on the command line using the -D switch, or by specifying "-DDEBUG" in the "Other C Flags" field in the target build settings or style settings of Xcode). In general, Debug       builds should set the WO_DEBUG flag, and the logging macros will produce more verbose output. In Release or installation builds the WO_DEBUG glad should not be set, and the logging macros will produce less verbose (or no) output.
 
 #pragma mark -
 #pragma mark Assertion macros
@@ -62,15 +62,15 @@ do {                            \
 } while(0)                      \
 
 #pragma mark -
-#pragma mark Logging macros (development builds)
-/*! @group Logging macros (development builds) */
+#pragma mark Logging macros (Debug builds)
+/*! @group Logging macros (Debug builds) */
 
 #ifdef WO_DEBUG
 
-/*! The LOG macro is a simple wrapper for NSLog which calls NSLog in development builds and does nothing in deployment builds. */
+/*! The LOG macro is a simple wrapper for NSLog which calls NSLog in Debug builds and does nothing in Release builds. */
 #define LOG(...) NSLog([NSString stringWithFormat:__VA_ARGS__])
 
-/*! The VLOG macro ("verbose log") wraps NSLog and includes additional debugging info (class name, address, method name). In deployment builds it does nothing. */
+/*! The VLOG macro ("verbose log") wraps NSLog and includes additional debugging info (class name, address, method name). In Release builds it does nothing. */
 #define VLOG(...)                                                           \
 do {                                                                        \
     NSString *VLOGMethodType    = ((self == [self class]) ? @"+" : @"-");   \
@@ -81,7 +81,7 @@ do {                                                                        \
         VLOGMethodType, VLOGClass, self, VLOGMethod, VLOGMessage]);         \
 } while (0)
 
-/*! The VVLOG macro ("very verbose log") wraps NSLog and includs additional debugging info (class name, address, method name, file name, line number). In deployment builds it does nothing. */
+/*! The VVLOG macro ("very verbose log") wraps NSLog and includs additional debugging info (class name, address, method name, file name, line number). In Release builds it does nothing. */
 #define VVLOG(...)                                                          \
 do {                                                                        \
     NSString *VLOGMethodType    = ((self == [self class]) ? @"+" : @"-");   \
@@ -96,18 +96,18 @@ do {                                                                        \
 #endif /* WO_DEBUG */
 
 #pragma mark -
-#pragma mark Logging macros (deployment builds)
-/*! @group Logging macros (deployment builds) */
+#pragma mark Logging macros (Release builds)
+/*! @group Logging macros (Release builds) */
 
 #ifndef WO_DEBUG
 
-/*! The LOG macro is a simple wrapper for NSLog which calls NSLog in development builds and does nothing in deployment builds. */
+/*! The LOG macro is a simple wrapper for NSLog which calls NSLog in Debug builds and does nothing in Release builds. */
 #define LOG(...) do {} while (0)
 
-/*! The VLOG macro ("verbose log") wraps NSLog and includes additional debugging info (class name, address, method name). In deployment builds it does nothing. */
+/*! The VLOG macro ("verbose log") wraps NSLog and includes additional debugging info (class name, address, method name). In Release builds it does nothing. */
 #define VLOG(...) do {} while (0)
 
-/*! The VVLOG macro ("very verbose log") wraps NSLog and includs additional debugging info (class name, address, method name, file name, line number). In deployment builds it does nothing. */
+/*! The VVLOG macro ("very verbose log") wraps NSLog and includs additional debugging info (class name, address, method name, file name, line number). In Release builds it does nothing. */
 #define VVLOG(...) do {} while (0)
 
 #endif /* WO_DEBUG */
@@ -116,8 +116,8 @@ do {                                                                        \
 #pragma mark Logging macros (all builds)
 /*! @group Logging macros (all builds) */
 
-/*! The ELOG macro ("error log") wraps NSLog and produces output in both development and deployment builds. In both development and deployment builds it merely passes the arguments to NSLog. This is different from previous versions of this macro in which more verbose output was produced in development builds. The rationale for the change is that if error messages are to be both useful and publicly visible then they should be good enough for debugging purposes as well. */
+/*! The ELOG macro ("error log") wraps NSLog and produces output in both Debug and Release builds. In both Debug and Release builds it merely passes the arguments to NSLog. This is different from previous versions of this macro in which more verbose output was produced in Debug builds. The rationale for the change is that if error messages are to be both useful and publicly visible then they should be good enough for debugging purposes as well. */
 #define ELOG(...) NSLog(__VA_ARGS__)
 
-/*! The ALOG macro ("always log") wraps NSLog and produces output in both development and deployment builds. In both cases it merely passes the arguments to NSLog. It is intended for informational purposes (notifying users of significant background events; not for flagging error conditions). */
+/*! The ALOG macro ("always log") wraps NSLog and produces output in both Debug and Release builds. In both cases it merely passes the arguments to NSLog. It is intended for informational purposes (notifying users of significant background events; not for flagging error conditions). */
 #define ALOG(...) NSLog(__VA_ARGS__)
