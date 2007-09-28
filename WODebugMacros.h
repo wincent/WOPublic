@@ -27,7 +27,7 @@ do                                                                              
 #ifdef NS_BLOCK_ASSERTIONS
 #define WOAssert(condition)
 #else
-/*! Replacement for the NSAssert macro. Named used UpperCamelCase for consistency with the NSAssert macro. Unlike NSAssert, WOAssert does not log the entire absolute path of the source file. Note that this does <em>not</em> hide the full path from an attacker inspecting the executable itself as the __FILE__ macro does embed the absolute path anyway; it is merely a cosmetic measure in the event that users should see an assertion printed to the log. Likewise, the failing condition itself is printed to the console so care should be taken about exactly what internal details get "leaked" in this way. */
+/*! Replacement for the NSAssert macro. Named using UperCamelCase for consistency with the NSAssert macro. Unlike NSAssert, WOAssert does not log the entire absolute path of the source file. Note that this does <em>not</em> hide the full path from an attacker inspecting the executable itself as the __FILE__ macro does embed the absolute path anyway; it is merely a cosmetic measure in the event that users should see an assertion printed to the log. Likewise, the failing condition itself is printed to the console so care should be taken about exactly what internal details get "leaked" in this way. */
 #define WOAssert(condition)                                                                                                     \
 do                                                                                                                              \
 {                                                                                                                               \
@@ -43,7 +43,7 @@ do                                                                              
 #ifdef NS_BLOCK_ASSERTIONS
 #define WOCAssert(condition)
 #else
-/*! Replacement for the NSCAssert macro. Named used UpperCamelCase for consistency with the NSCAssert macro. See the description of WOAssert for more information no the differences between this and the original macro. */
+/*! Replacement for the NSCAssert macro. Named using UpperCamelCase for consistency with the NSCAssert macro. See the description of WOAssert for more information no the differences between this and the original macro. */
 #define WOCAssert(condition)                                                                                                      \
 do                                                                                                                                \
 {                                                                                                                                 \
