@@ -1,6 +1,6 @@
 //
 //  WODebugMacros.h
-//  WOCommon (imported from WODebug)
+//  WOPublic
 //
 //  Created by Wincent Colaiuta on 30 November 2004.
 //  Copyright 2004-2007 Wincent Colaiuta.
