@@ -6,29 +6,12 @@
 //  Copyright 2004-2007 Wincent Colaiuta.
 
 //! \file
-//! A collection of convenience and logging/debugging macros
-//!
-//! There are alternate definitions of the logging macros depending on whether the WO_DEBUG flag is passed to the preprocessor and compiler (either on the command line using the -D switch, or by specifying "-DDEBUG" in the "Other C Flags" field in the target build settings or style settings of Xcode). In general, Debug       builds should set the WO_DEBUG flag, and the logging macros will produce more verbose output. In Release or installation builds the WO_DEBUG glad should not be set, and the logging macros will produce less verbose (or no) output.
+//! Assertion, check and flow-control macros.
 
-#pragma mark -
-#pragma mark Assertion macros
-
-/*! Modelled on Apple's require macros from AssertMacros.h, this macro is designed to handle error conditions in C code in a compact fashion. Unlike the Apple macros, this macro produces output even when not running in debug mode. It is intended for situations where error messages should be made available to the end user (for example, in a command line tool). Output is printed directly to the standard error with no timestamp or other information (output is not funnelled through NSLog). If \p condition evaluates to true no action is taken, otherwise control jumps to \p label and the third parameter is printed to the standard error, prepended by "Error: ". The third parameter should be a NSString format string (no terminating newline is required), optionally followed by parameters. */
-#define WORequire(condition, label, ...)                                                            \
-do                                                                                                  \
-{                                                                                                   \
-    if (!(condition))                                                                               \
-    {                                                                                               \
-        fprintf(stderr, "%s\n", [[NSString stringWithFormat:@"Error: " __VA_ARGS__] UTF8String]);   \
-        goto label;                                                                                 \
-    }                                                                                               \
-} while (0)
-
-#ifdef NS_BLOCK_ASSERTIONS
-#define WOAssert(condition)
-#else
-/*! Replacement for the NSAssert macro. Named using UperCamelCase for consistency with the NSAssert macro. Unlike NSAssert, WOAssert does not log the entire absolute path of the source file. Note that this does <em>not</em> hide the full path from an attacker inspecting the executable itself as the __FILE__ macro does embed the absolute path anyway; it is merely a cosmetic measure in the event that users should see an assertion printed to the log. Likewise, the failing condition itself is printed to the console so care should be taken about exactly what internal details get "leaked" in this way. */
-#define WOAssert(condition)                                                                                                     \
+//! Evaluates \p condition and if it evaluates to false calls the assertion handler for the current thread.
+//! Note that it does not pass the entire absolute path of the source file. Be aware that this does <em>not</em> hide the full path from an attacker inspecting the executable itself as the __FILE__ macro embeds the absolute path anyway; it is merely a cosmetic measure in the event that users should see an assertion printed to the log. Likewise, the failing condition itself is printed to the console so care should be taken about exactly what internal details get "leaked" in this way if they are at all sensitive.
+//! This macro is intended for use within Objective-C methods.
+#define WOAssertionBody(condition)                                                                                              \
 do                                                                                                                              \
 {                                                                                                                               \
     if (!(condition))                                                                                                           \
@@ -38,13 +21,11 @@ do                                                                              
                                                         lineNumber:__LINE__                                                     \
                                                        description:[NSString stringWithUTF8String:#condition]];                 \
 } while (0)
-#endif
 
-#ifdef NS_BLOCK_ASSERTIONS
-#define WOCAssert(condition)
-#else
-/*! Replacement for the NSCAssert macro. Named using UpperCamelCase for consistency with the NSCAssert macro. See the description of WOAssert for more information no the differences between this and the original macro. */
-#define WOCAssert(condition)                                                                                                      \
+//! Evaluates \p condition and if it evaluates to false calls the assertion handler for the current thread.
+//! Note that it does not pass the entire absolute path of the source file. Be aware that this does <em>not</em> hide the full path from an attacker inspecting the executable itself as the __FILE__ macro embeds the absolute path anyway; it is merely a cosmetic measure in the event that users should see an assertion printed to the log. Likewise, the failing condition itself is printed to the console so care should be taken about exactly what internal details get "leaked" in this way if they are at all sensitive.
+//! This macro is intended for use within C functions.
+#define WOCAssertionBody(condition)                                                                                               \
 do                                                                                                                                \
 {                                                                                                                                 \
     if (!(condition))                                                                                                             \
@@ -53,11 +34,51 @@ do                                                                              
                                                           lineNumber:__LINE__                                                     \
                                                          description:[NSString stringWithUTF8String:#condition]];                 \
 } while (0)
-#endif
 
-/*! Shorthand for including code only in debug builds. Useful for short statements. */
-#define WO_DEBUG_ONLY(block)    \
-do {                            \
-    block;                      \
-} while(0)                      \
+#pragma mark -
+#pragma mark Assertion macros
 
+//! Assertion macros are a debugging and development aid that are used to confirm the validity of programmer assumptions <em>in Debug builds only</em>; given that programs should be well-tested prior to release, the assertion macros are <em>preprocessed away to nothing in Release builds</em>. Specifically, assertion macros are preprocessed to nothing whnever the NS_BLOCK_ASSERTIONS macro is defined (which is the case in Release builds but not in Debug builds).
+//!
+//! Assertions should be used to confirm that programmer assumptions hold true. Untested assumptions are dangerous because when they are not met they can cause unpredictable behaviour. Testing assumptions ensures that programs "fail early" (as close to the site where a problem originates), thus make bugs easier to find and eliminate.
+//!
+//! A failed assumption is an indication of a programming error (either it was incorrect to make the assumption in the first place or a separate error in the codebase causes what should be a valid assumption to fail). Programmers can make assumptions about <em>things directly within their control</em> and whenever they make such an assumption they should test (confirm) it using one of these assertion macros. Using an assertion macro is equivalent to a programmer stating, "I expect this to be true at this point in the program's execution, and if it is not true then it is because either my expectation is incorrect or I've made a mistake elsewhere that causes my expectation not to be met".
+//!
+//! Things that are <em>not</em> suitable for assertions are things <em>outside</em> of programmer control; these are things which although they <em>should</em> or <em>can</em> be true, they <em>might</em> not and there is nothing that can be done to control them. You should still be testing for these possibilities, but the assertion macros are not the right tool for that job (partly because they are only compiled in Debug builds and partly because they are exclusively intended for detecting programmer errors).
+
+#ifdef NS_BLOCK_ASSERTIONS
+//! In Release builds the WOAssert macro is preprocessed away.
+#define WOAssert(condition)
+#else
+//! Replacement for the NSAssert macro which, for brevity, does not require a description string.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSAssert macro.
+//! See the description of WOAssertionBody for more information on the differences between this and NSAssert.
+#define WOAssert(condition)             WOAssertBody(condition)
+#endif /* NS_BLOCK_ASSERTIONS */
+
+#ifdef NS_BLOCK_ASSERTIONS
+//! In Release builds the WOCAssert macro is preprocessed away.
+#define WOCAssert(condition)
+#else
+//! Replacement for the NSCAssert macro which, for brevity, does not require a description string.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSCAssert macro.
+//! See the description of WOCAssertionBody for more information on the differences between this and NSCAssert.
+#define WOCAssert(condition)            WOCAssertionBody(condition)
+#endif /* NS_BLOCK_ASSERTIONS */
+
+#pragma mark -
+#pragma mark Check macros
+
+//! Check macros are a special class of macros designed to catch programming (and possibly other) errors. They are closely related to assertion macros but with one key difference: they are compiled into <em>both Debug and Release</em> builds.
+//!
+//! Use check macros when you require action to be taken upon failure in both Debug and Release builds. A good example of this need is when fulfilling your API contract; for example, if you design an API that says that an exception is thrown if an invalid parameter is passed then you cannot use assertion macros like NSParameterAssert because you would only be meeting your API contract in Debug builds (where the assertion macros are compiled in) and not in Release builds.
+
+//! Replacement for the NSParameterAssert macro which is compiled into both Release and Debug builds.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSParameterAssert macro.
+//! See the description of WOAssertionBody for more information on the differences between this and NSParameterAssert.
+#define WOParameterCheck(condition)     WOAssertionBody(condition)
+
+//! Replacement for the NSCParameterAssert macro which is compiled into both Release and Debug builds.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSCParameterAssert macro.
+//! See the description of WOCAssertionBody for more information on the differences between this and NSCParameterAssert.
+#define WOCParameterCheck(condition)    WOCAssertionBody(condition)
