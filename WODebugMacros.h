@@ -82,3 +82,13 @@ do                                                                              
 //! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSCParameterAssert macro.
 //! See the description of WOCAssertionBody for more information on the differences between this and NSCParameterAssert.
 #define WOCParameterCheck(condition)    WOCAssertionBody(condition)
+
+//! Replacement for the NSAssert macro which is compiled into both Release and Debug builds.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSAssert macro.
+//! See the description of WOAssertionBody for more information on the differences between this and NSParameterAssert.
+#define WOCheck(condition)				WOAssertionBody(condition)
+
+//! Replacement for the NSCAssert macro which is compiled into both Release and Debug builds.
+//! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSCAssert macro.
+//! See the description of WOCAssertionBody for more information on the differences between this and NSParameterAssert.
+#define WOCCheck(condition)				WOCAssertionBody(condition)
