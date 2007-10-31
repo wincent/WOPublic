@@ -72,6 +72,8 @@ do                                                                              
 //! Check macros are a special class of macros designed to catch programming (and possibly other) errors. They are closely related to assertion macros but with one key difference: they are compiled into <em>both Debug and Release</em> builds.
 //!
 //! Use check macros when you require action to be taken upon failure in both Debug and Release builds. A good example of this need is when fulfilling your API contract; for example, if you design an API that says that an exception is thrown if an invalid parameter is passed then you cannot use assertion macros like NSParameterAssert because you would only be meeting your API contract in Debug builds (where the assertion macros are compiled in) and not in Release builds.
+//!
+//! Another good use for check macros is in unit tests: in these cases as well you want to be alerted about unexpected conditions in both Debug and Release builds.
 
 //! Replacement for the NSParameterAssert macro which is compiled into both Release and Debug builds.
 //! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSParameterAssert macro.
