@@ -65,7 +65,7 @@ do                                                                              
 //! Replacement for the NSAssert macro which, for brevity, does not require a description string.
 //! Breaks with the all-uppercase macro naming convention and instead is named using camel case for consistency with the NSAssert macro.
 //! See the description of WOAssertionBody for more information on the differences between this and NSAssert.
-#define WOAssert(condition)             WOAssertBody(condition)
+#define WOAssert(condition)             WOAssertionBody(condition)
 #endif /* NS_BLOCK_ASSERTIONS */
 
 #ifdef NS_BLOCK_ASSERTIONS
