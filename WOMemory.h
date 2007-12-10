@@ -24,3 +24,11 @@ static inline void *wmalloc(size_t size)
         [NSException raise:NSMallocException format:@"malloc of %d bytes failed", size];
     return buffer;
 }
+
+//! Wrapper for CFMakeCollectable with an additional check that makes it safe to pass NULL values.
+static inline CFTypeRef WOMakeCollectable(CFTypeRef ref)
+{
+    if (ref)
+        ref = CFMakeCollectable(ref);
+    return ref;
+}
