@@ -20,7 +20,9 @@
 static inline void *wmalloc(size_t size)
 {
     void *buffer = malloc(size);
-    if (!buffer)
+
+    // POSIX allows size to be 0, so explicitly check for ENOMEM
+    if (!buffer && errno == ENOMEM)
         [NSException raise:NSMallocException format:@"malloc of %d bytes failed", size];
     return buffer;
 }
