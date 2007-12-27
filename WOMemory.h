@@ -34,3 +34,10 @@ static inline CFTypeRef WOMakeCollectable(CFTypeRef ref)
         ref = CFMakeCollectable(ref);
     return ref;
 }
+
+//! Wrapper for CFRelease with an additional check that makes it safe to pass NULL values.
+static inline void WOCFRelease(CFTypeRef ref)
+{
+    if (ref)
+        CFRelease(ref);
+}
