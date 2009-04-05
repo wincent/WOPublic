@@ -27,14 +27,28 @@
 //! \file
 //! Memory barrier macros for ppc, ppc64, i386/SSE and i386
 //!
-//! This file provides a full bi-directional memory barrier macro, WO_MEMORY_BARRIER, and the following uni-directional barriers:
+//! This file provides a full bi-directional memory barrier macro,
+//! WO_MEMORY_BARRIER, and the following uni-directional barriers:
 //!
-//!     - the WO_WRITE_MEMORY_BARRIER; also known as a "store" or "release" memory barrier, or an "upwards fence": all stores before the barrier are guaranteed to take place before any stores after the barrier.
-//!     - the WO_READ_MEMORY_BARRIER; also known as a "load" or "acquire" memory barrier, or a "downwards fence": all loads before the barrier are guaranteed to take place before any loads after the barrier; a read barrier is also an implied "data dependency" barrier, guaranteeing the correct ordering and visibility of two loads where the second load depends on the result of the first.
+//! - the WO_WRITE_MEMORY_BARRIER; also known as a "store" or "release" memory
+//!   barrier, or an "upwards fence": all stores before the barrier are
+//!   guaranteed to take place before any stores after the barrier.
+//! - the WO_READ_MEMORY_BARRIER; also known as a "load" or "acquire" memory
+//!   barrier, or a "downwards fence": all loads before the barrier are
+//!   guaranteed to take place before any loads after the barrier; a read
+//!   barrier is also an implied "data dependency" barrier, guaranteeing the
+//!   correct ordering and visibility of two loads where the second load depends
+//!   on the result of the first.
 //!
-//! Memory barriers should always come in pairs. If they are correctly placed they prevent operations performed on one CPU from being seen out-of-order by another CPU, something that would otherwise be possible due to the potentionally aggressive instruction re-ordering performed by modern compilers and CPUs, and the possibility of incoherency between per-processor caches.
+//! Memory barriers should always come in pairs. If they are correctly placed
+//! they prevent operations performed on one CPU from being seen out-of-order by
+//! another CPU, something that would otherwise be possible due to the
+//! potentionally aggressive instruction re-ordering performed by modern
+//! compilers and CPUs, and the possibility of incoherency between per-processor
+//! caches.
 //!
-//! The following code illustrates correct placement of memory barriers in a singleton implementation that uses the Double-Checked Locking pattern:
+//! The following code illustrates correct placement of memory barriers in a
+//! singleton implementation that uses the Double-Checked Locking pattern:
 //!
 //! \code
 //! id instance = shared_instance;              // 1
@@ -55,12 +69,20 @@
 //! return instance;
 //! \endcode
 //!
-//! The principal purpose of the memory barriers in the above example is to ensure that:
+//! The principal purpose of the memory barriers in the above example is to
+//! ensure that:
 //!
-//!     - only one instance of the singleton is allocated (by the alloc_instance() function)
-//!     - the allocation is fully completed before any other threads are allowed to see the shared instance
+//! - only one instance of the singleton is allocated (by the alloc_instance()
+//!   function)
+//! - the allocation is fully completed before any other threads are allowed to
+//!   see the shared instance
 //!
-//! To imagine the effects of the pair of barriers one must imagine two threads, each on a different processor, trying to execute the code simultaneously. The @synchronized block already guarantees that only one thread can enter the critical synchronzied section at a time, but without the memory barriers there is no guarantee that another thread won't see the operations <em>inside</em> the critical section as happening in a different order.
+//! To imagine the effects of the pair of barriers one must imagine two threads,
+//! each on a different processor, trying to execute the code simultaneously.
+//! The @synchronized block already guarantees that only one thread can enter
+//! the critical synchronzied section at a time, but without the memory barriers
+//! there is no guarantee that another thread won't see the operations
+//! <em>inside</em> the critical section as happening in a different order.
 //!
 //! This is because even a seemingly atomic operation like the following:
 //!
@@ -78,13 +100,31 @@
 //! shared_instance = instance;
 //! \encode
 //!
-//! On a single-processor machine with a single cache there are no problems with this non-atomicity because the CPU will always see these events as being in the correct order. On a multi-processor machine with multiple caches, however, the order of the events may be perceived differently from different CPUs. This is because when the changes are propagated from one cache to another they may not necessarily be propagated in the same order; the shared_instance pointer may be updated first, for example, <em>before</em> the memory indicated by the pointer (the actual instance) itself is updated.
+//! On a single-processor machine with a single cache there are no problems with
+//! this non-atomicity because the CPU will always see these events as being in
+//! the correct order. On a multi-processor machine with multiple caches,
+//! however, the order of the events may be perceived differently from different
+//! CPUs. This is because when the changes are propagated from one cache to
+//! another they may not necessarily be propagated in the same order; the
+//! shared_instance pointer may be updated first, for example, <em>before</em>
+//! the memory indicated by the pointer (the actual instance) itself is updated.
 //!
-//! The call to WO_WRITE_MEMORY_BARRIER at "4" prevents any stores from moving past it in either direction; that is, the allocation ("3") must complete before the assignment to the shared_instance variable ("5").
+//! The call to WO_WRITE_MEMORY_BARRIER at "4" prevents any stores from moving
+//! past it in either direction; that is, the allocation ("3") must complete
+//! before the assignment to the shared_instance variable ("5").
 //!
-//! The call to WO_READ_MEMORY_BARRIER at "2" is necessary because without it the ordering enforced by the corresponding write barrier would not necessarily be visible from another processor. That is, the read of shared_instance at "1", in conjunction with the read memory barrier at "2", causes all effects prior to the <em>storage</em> of shared_instance (at "5") to be visible; in this case the "effect" that we are interested in is the completion of the alloc_instance() function at "3".
+//! The call to WO_READ_MEMORY_BARRIER at "2" is necessary because without it
+//! the ordering enforced by the corresponding write barrier would not
+//! necessarily be visible from another processor. That is, the read of
+//! shared_instance at "1", in conjunction with the read memory barrier at "2",
+//! causes all effects prior to the <em>storage</em> of shared_instance (at "5")
+//! to be visible; in this case the "effect" that we are interested in is the
+//! completion of the alloc_instance() function at "3".
 //!
-//! Simplifying to the extreme, the write memory barrier effectively alters the state of shared memory, while read memory barrier ensures that the reader sees the new state. Only when used in pairs can these memory barriers offer useful guarantees.
+//! Simplifying to the extreme, the write memory barrier effectively alters the
+//! state of shared memory, while read memory barrier ensures that the reader
+//! sees the new state. Only when used in pairs can these memory barriers offer
+//! useful guarantees.
 //!
 //! \sa http://kerneltrap.org/node/6431
 //! \sa http://www.nwcpp.org/Downloads/2004/DCLP_notes.pdf
@@ -94,16 +134,23 @@
 // ppc
 
 //! Prevents loads being reordered across the point at which it appears.
+//!
 //! It implies a data dependency barrier.
-//! It is typically used immediately after a critical read (load) operation, and used in conjunction with a corresponding write memory barrier.
+//! It is typically used immediately after a critical read (load) operation, and
+//! used in conjunction with a corresponding write memory barrier.
 #define WO_READ_MEMORY_BARRIER()    __asm__ __volatile__ ("sync":::"memory")
 
 //! Prevents stores being reordered across the point at which it appears.
-//! It is typically used immediately before a critical write (store) operation, and used in conjunction with a corresponding read memory barrier.
+//!
+//! It is typically used immediately before a critical write (store) operation,
+//! and used in conjunction with a corresponding read memory barrier.
 #define WO_WRITE_MEMORY_BARRIER()   __asm__ __volatile__ ("eieio":::"memory")
 
-//! Prevents loads and stores being reordered across the point at which it appears.
-//! This is a full bi-directional "fence" that combines the functionality of both a read and a write memory barrier.
+//! Prevents loads and stores being reordered across the point at which it
+//! appears.
+//!
+//! This is a full bi-directional "fence" that combines the functionality of
+//! both a read and a write memory barrier.
 #define WO_MEMORY_BARRIER()         __asm__ __volatile__ ("sync":::"memory")
 
 #elif defined(__i386__)
@@ -140,6 +187,9 @@
 
 #endif
 
+//! Shortcut macro encapsulating the double-checked locking pattern with
+//! memory barriers for safe singleton initialization.
+//!
 //! Usage:
 //!
 //! \code
