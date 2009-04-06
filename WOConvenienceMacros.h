@@ -118,7 +118,7 @@
 //! The enclosing parentheses serve to make the macro suitable for use inside other macros, for example:
 //!
 //!     \code
-//!     WO_DICTIONARY(WO_STRING(@"foo%x", foo), WO_ARRAY(@"foo"));
+//!     WO_ARRAY(WO_STRING(@"foo%x", foo), WO_ARRAY(@"foo"));
 //!     \endcode
 //!
 #define WO_ARRAY(...) ([NSArray arrayWithObjects:__VA_ARGS__, nil])
@@ -169,4 +169,3 @@
 
 //! Shorthand for returning an NSNumber object initialized with an float value.
 #define WO_FLOAT(arg) [NSNumber numberWithFloat:(arg)]
-
