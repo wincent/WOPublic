@@ -6,9 +6,6 @@
 // class header
 #import "WOArgumentArray.h"
 
-// WOCommon headers
-#import "WOCommon/WOEnumerate.h"
-
 @implementation WOArgumentArray
 
 + (id)arrayWithArray:(NSArray *)anArray
