@@ -35,9 +35,6 @@
 // WOPublic headers
 #import "WOPublic/WODebugMacros.h"
 
-// WOCommon headers
-#import "WOCommon/WOConvenienceMacros.h"
-
 @implementation WOMappedData
 
 + (id)dataWithContentsOfFile:(NSString *)path
