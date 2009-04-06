@@ -1,5 +1,5 @@
 // WOArgumentArrayTests
-// WOPublic (formerly part of WODebug)
+// WOPublic
 //
 // Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
 //

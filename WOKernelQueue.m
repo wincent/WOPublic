@@ -1,5 +1,5 @@
 // WOKernelQueue.m
-// WOPublic (formerly part of WOBase, then WODebug)
+// WOPublic
 //
 // Copyright 2005-2009 Wincent Colaiuta. All rights reserved.
 //

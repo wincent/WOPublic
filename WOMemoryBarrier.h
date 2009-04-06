@@ -1,5 +1,5 @@
 // WOMemoryBarrier.h
-// WOPublic (formerly part of WOCommon)
+// WOPublic
 //
 // Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
 //
