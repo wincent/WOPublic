@@ -38,9 +38,6 @@
 #import "WOPublic/WOConvenienceMacros.h"
 #import "WOPublic/WODebugMacros.h"
 
-// WOCommon headers
-#import "WOCommon/WOEnumerate.h"
-
 #pragma mark -
 #pragma mark Dictionary key macros
 
