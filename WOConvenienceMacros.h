@@ -113,3 +113,60 @@
         WO_DECLARE_CATEGORY_MARKER_(ClassName, CategoryName)
 
 //! \endgroup
+
+//! Shorthand for defining an NSArray with a variable number of elements. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, for example:
+//!
+//!     \code
+//!     WO_DICTIONARY(WO_STRING(@"foo%x", foo), WO_ARRAY(@"foo"));
+//!     \endcode
+//!
+#define WO_ARRAY(...) ([NSArray arrayWithObjects:__VA_ARGS__, nil])
+
+//! Shorthand for defining an NSSet with a variable number of elements. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+#define WO_SET(...) ([NSSet setWithObjects:__VA_ARGS__, nil])
+
+//! Shorthand for defining an NSMutableArray with a variable number of elements. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+#define WO_MUTABLE_ARRAY(...) ([NSMutableArray arrayWithObjects:__VA_ARGS__, nil])
+
+//! Shorthand for defining an NSMutableSet with a variable number of elements. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+#define WO_MUTABLE_SET(...) ([NSMutableSet setWithObjects:__VA_ARGS__, nil])
+
+//! Shorthand for defining an NSString based on a format string.
+//!
+//! \code
+//! WO_STRING(@"foo");
+//! WO_STRING(@"foo %d", bar);
+//! \endcode
+#define WO_STRING(...) [NSString stringWithFormat:__VA_ARGS__]
+
+//! Shorthand for defining an NSMutableString based on a format string.
+//!
+//! \code
+//! WO_MUTABLE_STRING(@"foo");
+//! WO_MUTABLE_STRING(@"foo %d", bar);
+//! \endcode
+#define WO_MUTABLE_STRING(...) [NSMutableString stringWithFormat:__VA_ARGS__]
+
+//! Shorthand for returning an NSNumber object initialized with a BOOL value of YES.
+#define WO_YES [NSNumber numberWithBool:YES]
+
+//! Shorthand for returning an NSNumber object initialized with a BOOL value of NO.
+#define WO_NO [NSNumber numberWithBool:NO]
+
+//! Shorthand for returning an NSNumber object initialized with a BOOL value. The value may be literal YES or NO, or and expression to be evaluated.
+//! The double negation is used to ensure that a real boolean value is obtained; without it values large enough to overflow the storage for the BOOL type could produce incorrect results when cast to BOOL.
+#define WO_BOOL(arg) [NSNumber numberWithBool:!!(arg)]
+
+//! Shorthand for returning an NSNumber object initialized with an int value.
+#define WO_INT(arg) [NSNumber numberWithInt:(arg)]
+
+//! Shorthand for returning an NSNumber object initialized with an unsigned int value.
+#define WO_UNSIGNED(arg) [NSNumber numberWithUnsignedInt:(arg)]
+
+//! Shorthand for returning an NSNumber object initialized with an float value.
+#define WO_FLOAT(arg) [NSNumber numberWithFloat:(arg)]
+
