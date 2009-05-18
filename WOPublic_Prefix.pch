@@ -2,4 +2,6 @@
 // Prefix header for all source files of the 'WOPublic' target in the 'WOPublic' project.
 //
 
-#include <Carbon/Carbon.h>
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
