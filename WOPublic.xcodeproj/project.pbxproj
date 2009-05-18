@@ -9,6 +9,25 @@
 /* Begin PBXBuildFile section */
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
+		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
+		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
+		BCBD90900FC206FC003F2110 /* NSMutableString+WOEditingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD908A0FC206FC003F2110 /* NSMutableString+WOEditingUtilities.m */; };
+		BCBD90910FC206FC003F2110 /* NSString+WOFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD908B0FC206FC003F2110 /* NSString+WOFileUtilities.m */; };
+		BCBD90920FC206FC003F2110 /* NSMutableString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD908C0FC206FC003F2110 /* NSMutableString+WOPathUtilities.m */; };
+		BCBD90A10FC20709003F2110 /* WOLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90940FC20709003F2110 /* WOLogManager.m */; };
+		BCBD90A20FC20709003F2110 /* WOKernelQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD909A0FC20709003F2110 /* WOKernelQueue.m */; };
+		BCBD90A30FC20709003F2110 /* WOArgumentArray.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD909B0FC20709003F2110 /* WOArgumentArray.m */; };
+		BCBD90A40FC20709003F2110 /* WOMappedData.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD909C0FC20709003F2110 /* WOMappedData.m */; };
+		BCBD90A50FC20709003F2110 /* WOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD909F0FC20709003F2110 /* WOObject.m */; };
+		BCBD90B60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90A60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m */; };
+		BCBD90B70FC20713003F2110 /* NSString+WOPathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AB0FC20713003F2110 /* NSString+WOPathUtilitiesTests.m */; };
+		BCBD90B80FC20713003F2110 /* WOObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AC0FC20713003F2110 /* WOObjectTests.m */; };
+		BCBD90B90FC20713003F2110 /* WOArgumentArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AD0FC20713003F2110 /* WOArgumentArrayTests.m */; };
+		BCBD90BA0FC20713003F2110 /* WOMappedDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AE0FC20713003F2110 /* WOMappedDataTests.m */; };
+		BCBD90BB0FC20713003F2110 /* WOKernelQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */; };
+		BCBD90BC0FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B40FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m */; };
+		BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +41,48 @@
 		BCBD90540FC2050E003F2110 /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "../../buildtools/base-style.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90550FC2050E003F2110 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "../../buildtools/debug-style.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90560FC2050E003F2110 /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "../../buildtools/release-style.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOPathUtilities.m"; sourceTree = "<group>"; };
+		BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOPathUtilities.h"; sourceTree = "<group>"; };
+		BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOPathUtilities.h"; sourceTree = "<group>"; };
+		BCBD90840FC206FC003F2110 /* NSFileManager+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+WOPathUtilities.h"; sourceTree = "<group>"; };
+		BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOCreation.m"; sourceTree = "<group>"; };
+		BCBD90860FC206FC003F2110 /* NSString+WOCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOCreation.h"; sourceTree = "<group>"; };
+		BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+WOPathUtilities.m"; sourceTree = "<group>"; };
+		BCBD90880FC206FC003F2110 /* NSMutableString+WOEditingUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOEditingUtilities.h"; sourceTree = "<group>"; };
+		BCBD90890FC206FC003F2110 /* NSString+WOFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOFileUtilities.h"; sourceTree = "<group>"; };
+		BCBD908A0FC206FC003F2110 /* NSMutableString+WOEditingUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+WOEditingUtilities.m"; sourceTree = "<group>"; };
+		BCBD908B0FC206FC003F2110 /* NSString+WOFileUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOFileUtilities.m"; sourceTree = "<group>"; };
+		BCBD908C0FC206FC003F2110 /* NSMutableString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+WOPathUtilities.m"; sourceTree = "<group>"; };
+		BCBD90930FC20709003F2110 /* WOArgumentArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOArgumentArray.h; sourceTree = "<group>"; };
+		BCBD90940FC20709003F2110 /* WOLogManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLogManager.m; sourceTree = "<group>"; };
+		BCBD90950FC20709003F2110 /* WOKernelQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOKernelQueue.h; sourceTree = "<group>"; };
+		BCBD90960FC20709003F2110 /* WOObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOObject.h; sourceTree = "<group>"; };
+		BCBD90970FC20709003F2110 /* WOMappedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMappedData.h; sourceTree = "<group>"; };
+		BCBD90980FC20709003F2110 /* WODebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WODebugMacros.h; sourceTree = "<group>"; };
+		BCBD90990FC20709003F2110 /* WOMemoryBarrier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMemoryBarrier.h; sourceTree = "<group>"; };
+		BCBD909A0FC20709003F2110 /* WOKernelQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOKernelQueue.m; sourceTree = "<group>"; };
+		BCBD909B0FC20709003F2110 /* WOArgumentArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOArgumentArray.m; sourceTree = "<group>"; };
+		BCBD909C0FC20709003F2110 /* WOMappedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOMappedData.m; sourceTree = "<group>"; };
+		BCBD909D0FC20709003F2110 /* WOLogManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLogManager.h; sourceTree = "<group>"; };
+		BCBD909E0FC20709003F2110 /* WOConvenienceMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOConvenienceMacros.h; sourceTree = "<group>"; };
+		BCBD909F0FC20709003F2110 /* WOObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOObject.m; sourceTree = "<group>"; };
+		BCBD90A00FC20709003F2110 /* WOMemory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOMemory.h; sourceTree = "<group>"; };
+		BCBD90A60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+WOPathUtilitiesTests.m"; path = "tests/NSFileManager+WOPathUtilitiesTests.m"; sourceTree = "<group>"; };
+		BCBD90A70FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+WOPathUtilitiesTests.h"; path = "tests/NSMutableString+WOPathUtilitiesTests.h"; sourceTree = "<group>"; };
+		BCBD90A80FC20713003F2110 /* NSString+WOPathUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+WOPathUtilitiesTests.h"; path = "tests/NSString+WOPathUtilitiesTests.h"; sourceTree = "<group>"; };
+		BCBD90A90FC20713003F2110 /* WOArgumentArrayTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOArgumentArrayTests.h; path = tests/WOArgumentArrayTests.h; sourceTree = "<group>"; };
+		BCBD90AA0FC20713003F2110 /* WOKernelQueueTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOKernelQueueTests.h; path = tests/WOKernelQueueTests.h; sourceTree = "<group>"; };
+		BCBD90AB0FC20713003F2110 /* NSString+WOPathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+WOPathUtilitiesTests.m"; path = "tests/NSString+WOPathUtilitiesTests.m"; sourceTree = "<group>"; };
+		BCBD90AC0FC20713003F2110 /* WOObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOObjectTests.m; path = tests/WOObjectTests.m; sourceTree = "<group>"; };
+		BCBD90AD0FC20713003F2110 /* WOArgumentArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOArgumentArrayTests.m; path = tests/WOArgumentArrayTests.m; sourceTree = "<group>"; };
+		BCBD90AE0FC20713003F2110 /* WOMappedDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOMappedDataTests.m; path = tests/WOMappedDataTests.m; sourceTree = "<group>"; };
+		BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOKernelQueueTests.m; path = tests/WOKernelQueueTests.m; sourceTree = "<group>"; };
+		BCBD90B00FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+WOPathUtilitiesTests.h"; path = "tests/NSFileManager+WOPathUtilitiesTests.h"; sourceTree = "<group>"; };
+		BCBD90B10FC20713003F2110 /* WOMappedDataTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOMappedDataTests.h; path = tests/WOMappedDataTests.h; sourceTree = "<group>"; };
+		BCBD90B20FC20713003F2110 /* WOObjectTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOObjectTests.h; path = tests/WOObjectTests.h; sourceTree = "<group>"; };
+		BCBD90B30FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+WOEditingUtilitiesTests.h"; path = "tests/NSMutableString+WOEditingUtilitiesTests.h"; sourceTree = "<group>"; };
+		BCBD90B40FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOPathUtilitiesTests.m"; path = "tests/NSMutableString+WOPathUtilitiesTests.m"; sourceTree = "<group>"; };
+		BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOEditingUtilitiesTests.m"; path = "tests/NSMutableString+WOEditingUtilitiesTests.m"; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -41,7 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				BCBD904E0FC204A2003F2110 /* Configuration */,
+				BCBD90670FC206A7003F2110 /* Headers */,
+				BCBD90660FC2069F003F2110 /* Categories */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
+				BCBD90690FC206BE003F2110 /* Tests */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
@@ -71,6 +135,16 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BCBD90930FC20709003F2110 /* WOArgumentArray.h */,
+				BCBD909B0FC20709003F2110 /* WOArgumentArray.m */,
+				BCBD90950FC20709003F2110 /* WOKernelQueue.h */,
+				BCBD909A0FC20709003F2110 /* WOKernelQueue.m */,
+				BCBD909D0FC20709003F2110 /* WOLogManager.h */,
+				BCBD90940FC20709003F2110 /* WOLogManager.m */,
+				BCBD90970FC20709003F2110 /* WOMappedData.h */,
+				BCBD909C0FC20709003F2110 /* WOMappedData.m */,
+				BCBD90960FC20709003F2110 /* WOObject.h */,
+				BCBD909F0FC20709003F2110 /* WOObject.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -117,6 +191,59 @@
 				BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		BCBD90660FC2069F003F2110 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD90840FC206FC003F2110 /* NSFileManager+WOPathUtilities.h */,
+				BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */,
+				BCBD90880FC206FC003F2110 /* NSMutableString+WOEditingUtilities.h */,
+				BCBD908A0FC206FC003F2110 /* NSMutableString+WOEditingUtilities.m */,
+				BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */,
+				BCBD908C0FC206FC003F2110 /* NSMutableString+WOPathUtilities.m */,
+				BCBD90860FC206FC003F2110 /* NSString+WOCreation.h */,
+				BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */,
+				BCBD90890FC206FC003F2110 /* NSString+WOFileUtilities.h */,
+				BCBD908B0FC206FC003F2110 /* NSString+WOFileUtilities.m */,
+				BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */,
+				BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		BCBD90670FC206A7003F2110 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD909E0FC20709003F2110 /* WOConvenienceMacros.h */,
+				BCBD90980FC20709003F2110 /* WODebugMacros.h */,
+				BCBD90A00FC20709003F2110 /* WOMemory.h */,
+				BCBD90990FC20709003F2110 /* WOMemoryBarrier.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		BCBD90690FC206BE003F2110 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD90B00FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.h */,
+				BCBD90A60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m */,
+				BCBD90B30FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.h */,
+				BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */,
+				BCBD90A70FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.h */,
+				BCBD90B40FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m */,
+				BCBD90A80FC20713003F2110 /* NSString+WOPathUtilitiesTests.h */,
+				BCBD90AB0FC20713003F2110 /* NSString+WOPathUtilitiesTests.m */,
+				BCBD90A90FC20713003F2110 /* WOArgumentArrayTests.h */,
+				BCBD90AD0FC20713003F2110 /* WOArgumentArrayTests.m */,
+				BCBD90AA0FC20713003F2110 /* WOKernelQueueTests.h */,
+				BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */,
+				BCBD90B10FC20713003F2110 /* WOMappedDataTests.h */,
+				BCBD90AE0FC20713003F2110 /* WOMappedDataTests.m */,
+				BCBD90B20FC20713003F2110 /* WOObjectTests.h */,
+				BCBD90AC0FC20713003F2110 /* WOObjectTests.m */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +300,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */,
+				BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */,
+				BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */,
+				BCBD90900FC206FC003F2110 /* NSMutableString+WOEditingUtilities.m in Sources */,
+				BCBD90910FC206FC003F2110 /* NSString+WOFileUtilities.m in Sources */,
+				BCBD90920FC206FC003F2110 /* NSMutableString+WOPathUtilities.m in Sources */,
+				BCBD90A10FC20709003F2110 /* WOLogManager.m in Sources */,
+				BCBD90A20FC20709003F2110 /* WOKernelQueue.m in Sources */,
+				BCBD90A30FC20709003F2110 /* WOArgumentArray.m in Sources */,
+				BCBD90A40FC20709003F2110 /* WOMappedData.m in Sources */,
+				BCBD90A50FC20709003F2110 /* WOObject.m in Sources */,
+				BCBD90B60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m in Sources */,
+				BCBD90B70FC20713003F2110 /* NSString+WOPathUtilitiesTests.m in Sources */,
+				BCBD90B80FC20713003F2110 /* WOObjectTests.m in Sources */,
+				BCBD90B90FC20713003F2110 /* WOArgumentArrayTests.m in Sources */,
+				BCBD90BA0FC20713003F2110 /* WOMappedDataTests.m in Sources */,
+				BCBD90BB0FC20713003F2110 /* WOKernelQueueTests.m in Sources */,
+				BCBD90BC0FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m in Sources */,
+				BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
