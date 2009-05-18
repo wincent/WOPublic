@@ -26,8 +26,8 @@
 
 //! Stringifies \p entity
 //!
-//! If \p entity is a macro then only its name will be stringified. To stringify
-//! the contents of a macro use WO_STRINGIFY_CONTENTS.
+//! If \p entity is a macro then only its name will be stringified. To
+//! stringify the contents of a macro use WO_STRINGIFY_CONTENTS.
 #define WO_STRINGIFY(entity) #entity
 
 //! Double-stringifies \p macro
@@ -40,8 +40,8 @@
 //!
 //! The "used" attribute protects exported symbols from falling victim to the
 //! linker's dead-code stripping. The "visibility" attribute ensure that
-//! exported symbols are globally visible even when symbols are set to be hidden
-//! by default (the GCC_SYMBOLS_PRIVATE_EXTERN build setting).
+//! exported symbols are globally visible even when symbols are set to be
+//! hidden by default (the GCC_SYMBOLS_PRIVATE_EXTERN build setting).
 #define WO_EXPORT __attribute__((used)) __attribute__((visibility("default")))
 
 //! Mark classes for export
@@ -82,8 +82,8 @@
 //! \name Category linker warning helpers
 //!
 //! These macros are used internally in WOPublic to trigger linker errors if
-//! code that depends on a category imports a header file but the implementation
-//! file is not compiled in the build process.
+//! code that depends on a category imports a header file but the
+//! implementation file is not compiled in the build process.
 //!
 //! \startgroup
 
@@ -98,10 +98,10 @@
 
 //! Declares the existence of a unique external symbol and references it
 //!
-//! For use within a category interface file. Any code which uses a category and
-//! imports its header file will see this external reference. This allows code
-//! to receive link-time confirmation that the desired category implementation
-//! was indeed included in the compilation phase.
+//! For use within a category interface file. Any code which uses a category
+//! and imports its header file will see this external reference. This allows
+//! code to receive link-time confirmation that the desired category
+//! implementation was indeed included in the compilation phase.
 #define WO_DECLARE_CATEGORY_MARKER_(ClassName, CategoryName) \
         extern int ClassName ## CategoryName; \
         static __attribute__((used)) \
@@ -114,8 +114,10 @@
 
 //! \endgroup
 
-//! Shorthand for defining an NSArray with a variable number of elements. It is not necessary to follow the last element with nil.
-//! The enclosing parentheses serve to make the macro suitable for use inside other macros, for example:
+//! Shorthand for defining an NSArray with a variable number of elements. It is
+//! not necessary to follow the last element with nil. The enclosing
+//! parentheses serve to make the macro suitable for use inside other macros,
+//! for example:
 //!
 //!     \code
 //!     WO_ARRAY(WO_STRING(@"foo%x", foo), WO_ARRAY(@"foo"));
@@ -123,16 +125,22 @@
 //!
 #define WO_ARRAY(...) ([NSArray arrayWithObjects:__VA_ARGS__, nil])
 
-//! Shorthand for defining an NSSet with a variable number of elements. It is not necessary to follow the last element with nil.
-//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+//! Shorthand for defining an NSSet with a variable number of elements. It is
+//! not necessary to follow the last element with nil. The enclosing
+//! parentheses serve to make the macro suitable for use inside other macros,
+//! see WO_ARRAY for an example.
 #define WO_SET(...) ([NSSet setWithObjects:__VA_ARGS__, nil])
 
-//! Shorthand for defining an NSMutableArray with a variable number of elements. It is not necessary to follow the last element with nil.
-//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+//! Shorthand for defining an NSMutableArray with a variable number of
+//! elements. It is not necessary to follow the last element with nil. The
+//! enclosing parentheses serve to make the macro suitable for use inside other
+//! macros, see WO_ARRAY for an example.
 #define WO_MUTABLE_ARRAY(...) ([NSMutableArray arrayWithObjects:__VA_ARGS__, nil])
 
-//! Shorthand for defining an NSMutableSet with a variable number of elements. It is not necessary to follow the last element with nil.
-//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+//! Shorthand for defining an NSMutableSet with a variable number of elements.
+//! It is not necessary to follow the last element with nil. The enclosing
+//! parentheses serve to make the macro suitable for use inside other macros,
+//! see WO_ARRAY for an example.
 #define WO_MUTABLE_SET(...) ([NSMutableSet setWithObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSString based on a format string.
@@ -151,20 +159,26 @@
 //! \endcode
 #define WO_MUTABLE_STRING(...) [NSMutableString stringWithFormat:__VA_ARGS__]
 
-//! Shorthand for returning an NSNumber object initialized with a BOOL value of YES.
+//! Shorthand for returning an NSNumber object initialized with a BOOL value of
+//! YES.
 #define WO_YES [NSNumber numberWithBool:YES]
 
-//! Shorthand for returning an NSNumber object initialized with a BOOL value of NO.
+//! Shorthand for returning an NSNumber object initialized with a BOOL value of
+//! NO.
 #define WO_NO [NSNumber numberWithBool:NO]
 
-//! Shorthand for returning an NSNumber object initialized with a BOOL value. The value may be literal YES or NO, or and expression to be evaluated.
-//! The double negation is used to ensure that a real boolean value is obtained; without it values large enough to overflow the storage for the BOOL type could produce incorrect results when cast to BOOL.
+//! Shorthand for returning an NSNumber object initialized with a BOOL value.
+//! The value may be literal YES or NO, or and expression to be evaluated.
+//! The double negation is used to ensure that a real boolean value is
+//! obtained; without it values large enough to overflow the storage for the
+//! BOOL type could produce incorrect results when cast to BOOL.
 #define WO_BOOL(arg) [NSNumber numberWithBool:!!(arg)]
 
 //! Shorthand for returning an NSNumber object initialized with an int value.
 #define WO_INT(arg) [NSNumber numberWithInt:(arg)]
 
-//! Shorthand for returning an NSNumber object initialized with an unsigned int value.
+//! Shorthand for returning an NSNumber object initialized with an unsigned int
+//! value.
 #define WO_UNSIGNED(arg) [NSNumber numberWithUnsignedInt:(arg)]
 
 //! Shorthand for returning an NSNumber object initialized with an float value.
