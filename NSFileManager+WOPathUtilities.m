@@ -57,7 +57,7 @@ WO_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
     if (err == noErr)
         path = [NSMakeCollectable(CFURLCreateFromFSRef(NULL, &folderRef)) path];
     else
-        [WOLog err:@"FSFindFolder returned %d for type %d, domain %d, create %@", type, domain, WOStringFromBool(create)];
+        [WOLog err:@"FSFindFolder returned %d for type %d, domain %d, create %@", type, domain, WO_STRING_FROM_BOOL(create)];
     return path;
 }
 

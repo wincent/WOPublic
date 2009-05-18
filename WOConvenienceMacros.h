@@ -169,3 +169,8 @@
 
 //! Shorthand for returning an NSNumber object initialized with an float value.
 #define WO_FLOAT(arg) [NSNumber numberWithFloat:(arg)]
+
+//! Convenience macro for use in logging debugging information to the console.
+//! If \p expr evaluates to true then the macro evaluates to the NSString
+//! @"YES", otherwise evaluates to @"NO".
+#define WO_STRING_FROM_BOOL(expr) ((expr) ? @"YES" : @"NO")
