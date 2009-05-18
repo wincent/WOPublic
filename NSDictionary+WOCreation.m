@@ -58,7 +58,7 @@ WO_CATEGORY_MARKER(NSDictionary, WOCreation);
             }
             else
             {
-                exception = [NSException exceptionWithName:NSInvalidArgumentException 
+                exception = [NSException exceptionWithName:NSInvalidArgumentException
                                                     reason:WO_STRING(@"no object for key, %@", key)
                                                   userInfo:nil];
                 break;
