@@ -115,9 +115,7 @@
 //! \endgroup
 
 //! Shorthand for defining an NSDictionary with a variable number of key/object
-//! pairs. It is not necessary to follow the last element with nil. The
-//! enclosing parentheses serve to make the macro suitable for use inside other
-//! macros, see WO_ARRAY for an example.
+//! pairs. It is not necessary to follow the last element with nil.
 //!
 //! \note This macro depends on the dictionaryWithKeysAndObjects: method which
 //! is provided by WOCreation category on NSDictionary.
@@ -125,40 +123,25 @@
 
 //! Shorthand for defining an NSMutableDictionary with a variable number of
 //! key/object pairs. It is not necessary to follow the last element with nil.
-//! The enclosing parentheses serve to make the macro suitable for use inside
-//! other macros, see WO_ARRAY for an example.
 //!
 //! \note This macro depends on the dictionaryWithKeysAndObjects: method which
 //! is provided by WOCreation category on NSDictionary.
 #define WO_MUTABLE_DICTIONARY(...) ([NSMutableDictionary dictionaryWithKeysAndObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSArray with a variable number of elements. It is
-//! not necessary to follow the last element with nil. The enclosing
-//! parentheses serve to make the macro suitable for use inside other macros,
-//! for example:
-//!
-//!     \code
-//!     WO_ARRAY(WO_STRING(@"foo%x", foo), WO_ARRAY(@"foo"));
-//!     \endcode
-//!
+//! not necessary to follow the last element with nil.
 #define WO_ARRAY(...) ([NSArray arrayWithObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSSet with a variable number of elements. It is
-//! not necessary to follow the last element with nil. The enclosing
-//! parentheses serve to make the macro suitable for use inside other macros,
-//! see WO_ARRAY for an example.
+//! not necessary to follow the last element with nil.
 #define WO_SET(...) ([NSSet setWithObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSMutableArray with a variable number of
-//! elements. It is not necessary to follow the last element with nil. The
-//! enclosing parentheses serve to make the macro suitable for use inside other
-//! macros, see WO_ARRAY for an example.
+//! elements. It is not necessary to follow the last element with nil.
 #define WO_MUTABLE_ARRAY(...) ([NSMutableArray arrayWithObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSMutableSet with a variable number of elements.
-//! It is not necessary to follow the last element with nil. The enclosing
-//! parentheses serve to make the macro suitable for use inside other macros,
-//! see WO_ARRAY for an example.
+//! It is not necessary to follow the last element with nil.
 #define WO_MUTABLE_SET(...) ([NSMutableSet setWithObjects:__VA_ARGS__, nil])
 
 //! Shorthand for defining an NSString based on a format string.
@@ -188,8 +171,8 @@
 //! Shorthand for returning an NSNumber object initialized with a BOOL value.
 //! The value may be literal YES or NO, or and expression to be evaluated.
 //! The double negation is used to ensure that a real boolean value is
-//! obtained; without it values large enough to overflow the storage for the
-//! BOOL type could produce incorrect results when cast to BOOL.
+//! obtained (without it values large enough to overflow the storage for the
+//! BOOL type could produce incorrect results when cast to BOOL).
 #define WO_BOOL(arg) [NSNumber numberWithBool:!!(arg)]
 
 //! Shorthand for returning an NSNumber object initialized with an int value.
