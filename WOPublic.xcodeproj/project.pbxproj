@@ -28,6 +28,8 @@
 		BCBD90BB0FC20713003F2110 /* WOKernelQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */; };
 		BCBD90BC0FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B40FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m */; };
 		BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */; };
+		BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */; };
+		BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,10 @@
 		BCBD90B30FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+WOEditingUtilitiesTests.h"; path = "tests/NSMutableString+WOEditingUtilitiesTests.h"; sourceTree = "<group>"; };
 		BCBD90B40FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOPathUtilitiesTests.m"; path = "tests/NSMutableString+WOPathUtilitiesTests.m"; sourceTree = "<group>"; };
 		BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+WOEditingUtilitiesTests.m"; path = "tests/NSMutableString+WOEditingUtilitiesTests.m"; sourceTree = "<group>"; };
+		BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+WOCreationTests.m"; path = "tests/NSDictionary+WOCreationTests.m"; sourceTree = "<group>"; };
+		BCBD90CC0FC209DE003F2110 /* NSDictionary+WOCreationTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+WOCreationTests.h"; path = "tests/NSDictionary+WOCreationTests.h"; sourceTree = "<group>"; };
+		BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+WOCreation.m"; sourceTree = "<group>"; };
+		BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WOCreation.h"; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +202,8 @@
 		BCBD90660FC2069F003F2110 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */,
+				BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */,
 				BCBD90840FC206FC003F2110 /* NSFileManager+WOPathUtilities.h */,
 				BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */,
 				BCBD90880FC206FC003F2110 /* NSMutableString+WOEditingUtilities.h */,
@@ -226,6 +234,8 @@
 		BCBD90690FC206BE003F2110 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				BCBD90CC0FC209DE003F2110 /* NSDictionary+WOCreationTests.h */,
+				BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */,
 				BCBD90B00FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.h */,
 				BCBD90A60FC20713003F2110 /* NSFileManager+WOPathUtilitiesTests.m */,
 				BCBD90B30FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.h */,
@@ -319,6 +329,8 @@
 				BCBD90BB0FC20713003F2110 /* WOKernelQueueTests.m in Sources */,
 				BCBD90BC0FC20713003F2110 /* NSMutableString+WOPathUtilitiesTests.m in Sources */,
 				BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */,
+				BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */,
+				BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
