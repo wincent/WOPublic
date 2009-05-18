@@ -6,6 +6,22 @@
 	objectVersion = 45;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		BCBD90F00FC214B0003F2110 /* WOPublic + Run tests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BCBD90FA0FC214E5003F2110 /* Build configuration list for PBXAggregateTarget "WOPublic + Run tests" */;
+			buildPhases = (
+				BCBD90F60FC214C6003F2110 /* ShellScript */,
+			);
+			dependencies = (
+				BCBD90F40FC214B4003F2110 /* PBXTargetDependency */,
+				BCBD91100FC21506003F2110 /* PBXTargetDependency */,
+			);
+			name = "WOPublic + Run tests";
+			productName = "WOPublic + Run tests";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
@@ -30,6 +46,44 @@
 		BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */; };
 		BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCBD90F30FC214B4003F2110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* WOPublic */;
+			remoteInfo = WOPublic;
+		};
+		BCBD91090FC214F9003F2110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC56DDC6071BDDCE00287AF4 /* WOTest.framework */;
+			remoteInfo = WOTest;
+		};
+		BCBD910B0FC214F9003F2110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC37AD75072872CC00FDE665 /* WOTestRunner */;
+			remoteInfo = WOTestRunner;
+		};
+		BCBD910D0FC214F9003F2110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCA9401808566F4300FE8D18 /* WOTestSelfTests.bundle */;
+			remoteInfo = WOTestSelfTests;
+		};
+		BCBD910F0FC21506003F2110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC56DDB8071BDDCE00287AF4 /* WOTest */;
+			remoteInfo = WOTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -88,6 +142,7 @@
 		BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+WOCreation.m"; sourceTree = "<group>"; };
 		BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WOCreation.h"; sourceTree = "<group>"; };
 		BCBD90E60FC21402003F2110 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOTest.xcodeproj; path = ../../WOTest/src/WOTest.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +161,7 @@
 		089C166AFE841209C02AAC07 /* WOPublic */ = {
 			isa = PBXGroup;
 			children = (
+				BCBD90F90FC214E5003F2110 /* Dependencies */,
 				BCBD904E0FC204A2003F2110 /* Configuration */,
 				BCBD90670FC206A7003F2110 /* Headers */,
 				BCBD90660FC2069F003F2110 /* Categories */,
@@ -255,6 +311,24 @@
 			name = Tests;
 			sourceTree = "<group>";
 		};
+		BCBD90F90FC214E5003F2110 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		BCBD90FE0FC214F9003F2110 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCBD910A0FC214F9003F2110 /* WOTest.framework */,
+				BCBD910C0FC214F9003F2110 /* WOTestRunner */,
+				BCBD910E0FC214F9003F2110 /* WOTestSelfTests.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,12 +367,43 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* WOPublic */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = BCBD90FE0FC214F9003F2110 /* Products */;
+					ProjectRef = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* WOPublic */,
+				BCBD90F00FC214B0003F2110 /* WOPublic + Run tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		BCBD910A0FC214F9003F2110 /* WOTest.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = WOTest.framework;
+			remoteRef = BCBD91090FC214F9003F2110 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCBD910C0FC214F9003F2110 /* WOTestRunner */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = WOTestRunner;
+			remoteRef = BCBD910B0FC214F9003F2110 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCBD910E0FC214F9003F2110 /* WOTestSelfTests.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = WOTestSelfTests.bundle;
+			remoteRef = BCBD910D0FC214F9003F2110 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D5B49AF048680CD000E48DA /* Resources */ = {
@@ -309,6 +414,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCBD90F60FC214C6003F2110 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export DYLD_FRAMEWORK_PATH=\"${TARGET_BUILD_DIR}\"\n\n\"${TARGET_BUILD_DIR}/WOTest.framework/Versions/A/Resources/WOTestRunner\" --test-bundle=\"${TARGET_BUILD_DIR}/WOPublic.bundle\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
@@ -340,6 +461,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCBD90F40FC214B4003F2110 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* WOPublic */;
+			targetProxy = BCBD90F30FC214B4003F2110 /* PBXContainerItemProxy */;
+		};
+		BCBD91100FC21506003F2110 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = WOTest;
+			targetProxy = BCBD910F0FC21506003F2110 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BCBD90E50FC21402003F2110 /* InfoPlist.strings */ = {
@@ -385,6 +519,20 @@
 			};
 			name = Release;
 		};
+		BCBD90F10FC214B0003F2110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = WOPublic;
+			};
+			name = Debug;
+		};
+		BCBD90F20FC214B0003F2110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = WOPublic;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,6 +550,15 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCBD90FA0FC214E5003F2110 /* Build configuration list for PBXAggregateTarget "WOPublic + Run tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBD90F10FC214B0003F2110 /* Debug */,
+				BCBD90F20FC214B0003F2110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
