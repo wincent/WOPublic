@@ -24,9 +24,13 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+// system header
 #import <Foundation/Foundation.h>
+
+// test framework header
 #import "WOTest/WOTest.h"
-#import "WOArgumentArray.h"
+
+@class WOArgumentArray;
 
 @interface WOArgumentArrayTests : NSObject <WOTest> {
     WOArgumentArray *args;

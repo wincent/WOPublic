@@ -32,8 +32,8 @@
 #import <unistd.h>          /* lseek() */
 #import <mach/vm_map.h>     /* vm_allocate(), vm_deallocate() */
 
-// WOPublic headers
-#import "WOPublic/WODebugMacros.h"
+// macro headers
+#import "WODebugMacros.h"
 
 @implementation WOMappedData
 

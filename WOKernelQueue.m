@@ -34,9 +34,9 @@
 #import <unistd.h>      /* close(), getpid() */
 #import <fcntl.h>       /* O_RDONLY */
 
-// WOPublic headers
-#import "WOPublic/WOConvenienceMacros.h"
-#import "WOPublic/WODebugMacros.h"
+// macro headers
+#import "WOConvenienceMacros.h"
+#import "WODebugMacros.h"
 
 #pragma mark -
 #pragma mark Dictionary key macros
