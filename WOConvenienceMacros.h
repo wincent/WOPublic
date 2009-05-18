@@ -114,6 +114,14 @@
 
 //! \endgroup
 
+//! Shorthand for defining an NSDictionary with a variable number of key/object pairs. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+#define WO_DICTIONARY(...) ([NSDictionary dictionaryWithKeysAndObjects:__VA_ARGS__, nil])
+
+//! Shorthand for defining an NSMutableDictionary with a variable number of key/object pairs. It is not necessary to follow the last element with nil.
+//! The enclosing parentheses serve to make the macro suitable for use inside other macros, see WO_ARRAY for an example.
+#define WO_MUTABLE_DICTIONARY(...) ([NSMutableDictionary dictionaryWithKeysAndObjects:__VA_ARGS__, nil])
+
 //! Shorthand for defining an NSArray with a variable number of elements. It is
 //! not necessary to follow the last element with nil. The enclosing
 //! parentheses serve to make the macro suitable for use inside other macros,
