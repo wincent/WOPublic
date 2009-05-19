@@ -79,7 +79,7 @@
 //!
 //! To imagine the effects of the pair of barriers one must imagine two threads,
 //! each on a different processor, trying to execute the code simultaneously.
-//! The @synchronized block already guarantees that only one thread can enter
+//! The \@synchronized block already guarantees that only one thread can enter
 //! the critical synchronzied section at a time, but without the memory barriers
 //! there is no guarantee that another thread won't see the operations
 //! <em>inside</em> the critical section as happening in a different order.

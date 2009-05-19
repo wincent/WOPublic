@@ -49,6 +49,8 @@ WO_DECLARE_CATEGORY_MARKER(NSString, WOPathUtilities);
 //!
 //! \param type     One of the values defined in Apple's FSFindFolder documentation, such as kApplicationSupportFolderType, kDesktopFolderType or kTrashFolderType. See the Apple documentation for a full list.
 //! \param domain   One of the values defined in Apple's FSFindFolder documentation, such as kOnAppropriateDisk, kSystemDomain, kLocalDomain, kNetworkDomain or kUserDomain.
+//! \param creating If YES the folder should be created if it doesn't already
+//! exist.
 + (NSString *)stringWithFolder:(OSType)type domain:(short)domain creating:(BOOL)creating;
 
 //! Invokes stringWithFolder:domain:creating: passing \p type kApplicationSupportFolderType, \p domain kUserDomain and \p creating YES. Returns nil on failure. Note that the path returned is not for the application-specific subfolder within the Application Support folder, but for the Application Support folder itself. If you want the application specific subfolder then you should call stringWithApplicationSupportSubfolder.

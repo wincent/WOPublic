@@ -207,7 +207,7 @@ do                                                                          \
 //! Setting aLogLevel to 0 suppresses all logging performed with the #logMessage:, #logWarning:, #logError:, #logToFileMessage:, #logToFileWarning: and #logToFileError: methods. When set to 0 the #logLevel:message:, #logLevel:warning:, #logLevel:error:, #logToFileLevel:message:, #logToFileLevel:warning: and #logToFileLevel:error: methods will only produce log output if passed 0 in the level parameter.
 @property           unsigned    logLevel;
 
-//! When logging to a file the logfile path is automatically determined based on the application bundle identifier following this pattern: "~/Library/Logs/bundleidentifier.log". This behaviour can be overridden using the #setLogFilePath: method. To revert back to the standard behaviour set aLogFilePath to nil.
+//! When logging to a file the logfile path is automatically determined based on the application bundle identifier following this pattern: "~/Library/Logs/bundleidentifier.log". This behaviour can be overridden by setting the #logFilePath property; to revert back to the standard behaviour set #logFilePath to nil.
 @property(copy)             NSString    *logFilePath;
 
 @property(readonly, copy)   NSString    *defaultLogFilePath;
