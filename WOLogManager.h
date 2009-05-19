@@ -218,7 +218,21 @@ do                                                                          \
 #pragma mark -
 #pragma mark Macros
 
-//! Convenience macro.
+//! Convenience macro for quickly accessing the shared WOLogManager singleton
+//! instance.
+//!
+//! Together with convenience methods like WOLogManager#err:, provides a convenient
+//! shorthand such as:
+//!
+//! \code
+//! [WOLog err:@"aborting!"];
+//! \endcode
+//!
+//! instead of:
+//!
+//! \code
+//! [[WOLogManager sharedManager] logError:@"aborting!"];
+//! \endcode
 #define WOLog [WOLogManager sharedManager]
 
 /*! Normally the default log file name is determined by appending a "log" extension to the application bundle identifier. In cases where the bundle identifier cannot be determined, the default log file name will be WO_DEFAULT_LOG_FILE_NAME with the extension WO_LOG_FILE_EXTENSION. */
