@@ -1,0 +1,6 @@
+Original versions of the header, footer and CSS files generated with:
+
+/Applications/Doxygen.app/Contents/Resources/doxygen -w html \
+  header.html.orig \
+  footer.html.orig \
+  stylesheet.css.orig
