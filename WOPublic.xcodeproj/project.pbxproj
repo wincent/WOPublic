@@ -20,6 +20,17 @@
 			name = "WOPublic + Run tests";
 			productName = "WOPublic + Run tests";
 		};
+		BCBD91300FC22E83003F2110 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BCBD91490FC22E9C003F2110 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				BCBD912F0FC22E83003F2110 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
@@ -377,6 +388,7 @@
 			targets = (
 				8D5B49AC048680CD000E48DA /* WOPublic */,
 				BCBD90F00FC214B0003F2110 /* WOPublic + Run tests */,
+				BCBD91300FC22E83003F2110 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -428,6 +440,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export DYLD_FRAMEWORK_PATH=\"${TARGET_BUILD_DIR}\"\n\n\"${TARGET_BUILD_DIR}/WOTest.framework/Versions/A/Resources/WOTestRunner\" --test-bundle=\"${TARGET_BUILD_DIR}/WOPublic.bundle\"";
+		};
+		BCBD912F0FC22E83003F2110 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". \"${BUILDTOOLS_DIR}/RunDoxygen.sh\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -533,6 +558,27 @@
 			};
 			name = Release;
 		};
+		BCBD91310FC22E83003F2110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = Documentation;
+			};
+			name = Debug;
+		};
+		BCBD91320FC22E83003F2110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = Documentation;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -559,6 +605,15 @@
 			buildConfigurations = (
 				BCBD90F10FC214B0003F2110 /* Debug */,
 				BCBD90F20FC214B0003F2110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCBD91490FC22E9C003F2110 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCBD91310FC22E83003F2110 /* Debug */,
+				BCBD91320FC22E83003F2110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
