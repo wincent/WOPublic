@@ -24,11 +24,11 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-static inline void *wmalloc(size_t size)
+//! Wrapper for malloc() which in the event of failure raises an NSException
+//! (NSMallocException).
+static inline void *emalloc(size_t size)
 {
     void *buffer = malloc(size);
-
-    // POSIX allows size to be 0, so explicitly check for ENOMEM
     if (!buffer && errno == ENOMEM)
         [NSException raise:NSMallocException format:@"malloc of %d bytes failed", size];
     return buffer;
