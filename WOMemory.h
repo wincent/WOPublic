@@ -34,6 +34,19 @@ static inline void *wmalloc(size_t size)
     return buffer;
 }
 
+//! Wrapper for calloc() which in the event of failure prints an error message
+//! to the standard error and calls exit().
+static inline void *xcalloc(size_t count, size_t size)
+{
+    void *buffer = calloc(count, size);
+    if (!buffer && errno == ENOMEM)
+    {
+        fprintf(stderr, "error: failed to calloc %zu bytes\n", count * size);
+        exit(EXIT_FAILURE);
+    }
+    return buffer;
+}
+
 //! Wrapper for CFMakeCollectable with an additional check that makes it safe to pass NULL values.
 static inline CFTypeRef WOMakeCollectable(CFTypeRef ref)
 {
