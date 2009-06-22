@@ -76,7 +76,7 @@ WO_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
     const char  *readOnlyTemplate   = [self fileSystemRepresentationWithPath:aString];
     size_t      templateLength      = strlen(readOnlyTemplate);
     WOCheck(templateLength <= MAXPATHLEN);
-    char        *writeableTemplate  = wmalloc((templateLength + 1) * sizeof(char));
+    char        *writeableTemplate  = emalloc((templateLength + 1) * sizeof(char));
     strncpy(writeableTemplate, readOnlyTemplate, templateLength + 1);
     if (!mkdtemp(writeableTemplate))
     {
