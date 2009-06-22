@@ -100,7 +100,7 @@
             return nil;
         }
         WOCFRelease(URL);
-        UInt8 *buff = (UInt8 *)wmalloc(MAXPATHLEN);
+        UInt8 *buff = (UInt8 *)emalloc(MAXPATHLEN);
         if (!CFURLGetFileSystemRepresentation(URL, true, buff, MAXPATHLEN))
             [WOLog err:@"CFURLGetFileSystemRepresentation returned false"];
         else
@@ -136,8 +136,8 @@
             self,
             self.name ? self.name : @"<unset>",
             self.path ? self.path : @"<unset>",
-            WOStringFromBool(self.hidden),
-            WOStringFromBool(self.global)];
+            WO_STRING_FROM_BOOL(self.hidden),
+            WO_STRING_FROM_BOOL(self.global)];
 }
 
 #pragma mark -
