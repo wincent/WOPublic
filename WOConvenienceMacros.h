@@ -189,3 +189,25 @@
 //! If \p expr evaluates to true then the macro evaluates to the NSString
 //! @"YES", otherwise evaluates to @"NO".
 #define WO_STRING_FROM_BOOL(expr) ((expr) ? @"YES" : @"NO")
+
+//! Shorthand for using the free() function to free memory previously allocated
+//! with malloc(), emalloc() or similar, which then sets the pointer to NULL.
+//! Effectively this macro disposes of dangling pointers. If used consistently
+//! then the programmer can test if an object exists in memory by comparing its
+//! pointer to NULL.
+//!
+//! Use of this macro can effectively disguise programming errors; as such, it
+//! should only be used where changing a pointer to NULL is intended to
+//! communicate someting to other parts of the codebase (and not just to
+//! dispose of a dangling pointer "just in case").
+//!
+//! Note that because the macro performs an assignment on the supplied
+//! argument, it must be a valid lvalue (variable name, for example) and not a
+//! complex or compound one (such as the return result of a method, or a
+//! multi-part expression).
+#define WO_FREE(pointer)                    \
+do {                                        \
+    /* POSIX allows pointer to be NULL */   \
+    free(pointer);                          \
+    pointer = NULL;                         \
+} while(0)
