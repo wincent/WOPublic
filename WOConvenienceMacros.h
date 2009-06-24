@@ -28,13 +28,23 @@
 //!
 //! If \p entity is a macro then only its name will be stringified. To
 //! stringify the contents of a macro use WO_STRINGIFY_CONTENTS.
+//!
+//! This macro is guarded to avoid clashes with identical macros in other
+//! products.
+#ifndef WO_STRINGIFY
 #define WO_STRINGIFY(entity) #entity
+#endif
 
 //! Double-stringifies \p macro
 //!
 //! If \p is a macro, stringifies the contents of the macro; if \p is not a
 //! macro, merely stringifies it.
+//!
+//! This macro is guarded to avoid clashes with identical macros in other
+//! products.
+#ifndef WO_STRINGIFY_CONTENTS
 #define WO_STRINGIFY_CONTENTS(macro) WO_STRINGIFY(entity)
+#endif
 
 //! Mark symbols for export
 //!
