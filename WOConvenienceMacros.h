@@ -43,7 +43,7 @@
 //! This macro is guarded to avoid clashes with identical macros in other
 //! products.
 #ifndef WO_STRINGIFY_CONTENTS
-#define WO_STRINGIFY_CONTENTS(macro) WO_STRINGIFY(entity)
+#define WO_STRINGIFY_CONTENTS(entity) WO_STRINGIFY(entity)
 #endif
 
 //! Mark symbols for export
