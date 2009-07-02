@@ -35,6 +35,7 @@
 
 // other headers
 #import "WOConvenienceMacros.h"
+#import "WODebugMacros.h"
 #import "WOMemory.h"
 
 @interface WOLoginItem ()

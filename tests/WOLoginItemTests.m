@@ -25,10 +25,10 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 // class header
-#import "WOObjectTests.h"
-
-// other headers
 #import "WOLoginItemTests.h"
+
+// tested class header
+#import "WOLoginItem.h"
 
 @implementation WOLoginItemTests
 
