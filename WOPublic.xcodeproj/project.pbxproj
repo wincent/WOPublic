@@ -35,6 +35,8 @@
 
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */; };
+		BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -63,35 +65,35 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8D5B49AC048680CD000E48DA /* WOPublic */;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
 			remoteInfo = WOPublic;
 		};
 		BCBD91090FC214F9003F2110 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BC56DDC6071BDDCE00287AF4 /* WOTest.framework */;
+			remoteGlobalIDString = BC56DDC6071BDDCE00287AF4;
 			remoteInfo = WOTest;
 		};
 		BCBD910B0FC214F9003F2110 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BC37AD75072872CC00FDE665 /* WOTestRunner */;
+			remoteGlobalIDString = BC37AD75072872CC00FDE665;
 			remoteInfo = WOTestRunner;
 		};
 		BCBD910D0FC214F9003F2110 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BCA9401808566F4300FE8D18 /* WOTestSelfTests.bundle */;
+			remoteGlobalIDString = BCA9401808566F4300FE8D18;
 			remoteInfo = WOTestSelfTests;
 		};
 		BCBD910F0FC21506003F2110 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BC56DDB8071BDDCE00287AF4 /* WOTest */;
+			remoteGlobalIDString = BC56DDB8071BDDCE00287AF4;
 			remoteInfo = WOTest;
 		};
 /* End PBXContainerItemProxy section */
@@ -102,6 +104,10 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D5B49B6048680CD000E48DA /* WOPublic.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WOPublic.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItemList.h; sourceTree = "<group>"; };
+		BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItemList.m; sourceTree = "<group>"; };
+		BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItem.m; sourceTree = "<group>"; };
+		BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItem.h; sourceTree = "<group>"; };
 		BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "../../buildtools/loadable-bundle-target.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90540FC2050E003F2110 /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "../../buildtools/base-style.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90550FC2050E003F2110 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "../../buildtools/debug-style.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -211,6 +217,10 @@
 				BCBD909B0FC20709003F2110 /* WOArgumentArray.m */,
 				BCBD90950FC20709003F2110 /* WOKernelQueue.h */,
 				BCBD909A0FC20709003F2110 /* WOKernelQueue.m */,
+				BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */,
+				BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */,
+				BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */,
+				BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */,
 				BCBD909D0FC20709003F2110 /* WOLogManager.h */,
 				BCBD90940FC20709003F2110 /* WOLogManager.m */,
 				BCBD90970FC20709003F2110 /* WOMappedData.h */,
@@ -482,6 +492,8 @@
 				BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */,
 				BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */,
 				BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */,
+				BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */,
+				BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
