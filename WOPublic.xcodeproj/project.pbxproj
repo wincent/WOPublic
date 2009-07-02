@@ -111,10 +111,11 @@
 		BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItem.h; sourceTree = "<group>"; };
 		BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOLoginItemTests.m; path = tests/WOLoginItemTests.m; sourceTree = "<group>"; };
 		BC0B9F310FFCD0EB007AE543 /* WOLoginItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOLoginItemTests.h; path = tests/WOLoginItemTests.h; sourceTree = "<group>"; };
-		BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "../../buildtools/loadable-bundle-target.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BCBD90540FC2050E003F2110 /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "../../buildtools/base-style.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BCBD90550FC2050E003F2110 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "../../buildtools/debug-style.xcconfig"; sourceTree = SOURCE_ROOT; };
-		BCBD90560FC2050E003F2110 /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "../../buildtools/release-style.xcconfig"; sourceTree = SOURCE_ROOT; };
+		BC0BA05C0FFD25CD007AE543 /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "buildtools/base-style.xcconfig"; sourceTree = "<group>"; };
+		BC0BA05D0FFD25CD007AE543 /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "buildtools/loadable-bundle-target.xcconfig"; sourceTree = "<group>"; };
+		BC0BA05E0FFD25CD007AE543 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "buildtools/debug-style.xcconfig"; sourceTree = "<group>"; };
+		BC0BA05F0FFD25CD007AE543 /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "buildtools/release-style.xcconfig"; sourceTree = "<group>"; };
+		BC0BA0660FFD2603007AE543 /* buildtools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buildtools; sourceTree = "<group>"; };
 		BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOPathUtilities.m"; sourceTree = "<group>"; };
 		BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOPathUtilities.h"; sourceTree = "<group>"; };
 		BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOPathUtilities.h"; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		089C166AFE841209C02AAC07 /* WOPublic */ = {
 			isa = PBXGroup;
 			children = (
+				BC0BA0660FFD2603007AE543 /* buildtools */,
 				BCBD90F90FC214E5003F2110 /* Dependencies */,
 				BCBD904E0FC204A2003F2110 /* Configuration */,
 				BCBD90670FC206A7003F2110 /* Headers */,
@@ -270,10 +272,10 @@
 		BCBD904E0FC204A2003F2110 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				BCBD90540FC2050E003F2110 /* base-style.xcconfig */,
-				BCBD90550FC2050E003F2110 /* debug-style.xcconfig */,
-				BCBD90560FC2050E003F2110 /* release-style.xcconfig */,
-				BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */,
+				BC0BA05C0FFD25CD007AE543 /* base-style.xcconfig */,
+				BC0BA05E0FFD25CD007AE543 /* debug-style.xcconfig */,
+				BC0BA05D0FFD25CD007AE543 /* loadable-bundle-target.xcconfig */,
+				BC0BA05F0FFD25CD007AE543 /* release-style.xcconfig */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -532,7 +534,7 @@
 /* Begin XCBuildConfiguration section */
 		1DEB913B08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */;
+			baseConfigurationReference = BC0BA05D0FFD25CD007AE543 /* loadable-bundle-target.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = WOPublic;
@@ -541,7 +543,7 @@
 		};
 		1DEB913C08733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */;
+			baseConfigurationReference = BC0BA05D0FFD25CD007AE543 /* loadable-bundle-target.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = WOPublic;
@@ -550,14 +552,14 @@
 		};
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCBD90550FC2050E003F2110 /* debug-style.xcconfig */;
+			baseConfigurationReference = BC0BA05E0FFD25CD007AE543 /* debug-style.xcconfig */;
 			buildSettings = {
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCBD90560FC2050E003F2110 /* release-style.xcconfig */;
+			baseConfigurationReference = BC0BA05F0FFD25CD007AE543 /* release-style.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
