@@ -14,8 +14,8 @@
 				BCBD90F60FC214C6003F2110 /* ShellScript */,
 			);
 			dependencies = (
-				BCBD90F40FC214B4003F2110 /* PBXTargetDependency */,
 				BCBD91100FC21506003F2110 /* PBXTargetDependency */,
+				BCBD90F40FC214B4003F2110 /* PBXTargetDependency */,
 			);
 			name = "WOPublic + Run tests";
 			productName = "WOPublic + Run tests";
@@ -37,6 +37,7 @@
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */; };
 		BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */; };
+		BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -108,6 +109,8 @@
 		BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItemList.m; sourceTree = "<group>"; };
 		BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItem.m; sourceTree = "<group>"; };
 		BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItem.h; sourceTree = "<group>"; };
+		BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOLoginItemTests.m; path = tests/WOLoginItemTests.m; sourceTree = "<group>"; };
+		BC0B9F310FFCD0EB007AE543 /* WOLoginItemTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOLoginItemTests.h; path = tests/WOLoginItemTests.h; sourceTree = "<group>"; };
 		BCBD90510FC204E9003F2110 /* loadable-bundle-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "loadable-bundle-target.xcconfig"; path = "../../buildtools/loadable-bundle-target.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90540FC2050E003F2110 /* base-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "base-style.xcconfig"; path = "../../buildtools/base-style.xcconfig"; sourceTree = SOURCE_ROOT; };
 		BCBD90550FC2050E003F2110 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "../../buildtools/debug-style.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -324,6 +327,8 @@
 				BCBD90AD0FC20713003F2110 /* WOArgumentArrayTests.m */,
 				BCBD90AA0FC20713003F2110 /* WOKernelQueueTests.h */,
 				BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */,
+				BC0B9F310FFCD0EB007AE543 /* WOLoginItemTests.h */,
+				BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */,
 				BCBD90B10FC20713003F2110 /* WOMappedDataTests.h */,
 				BCBD90AE0FC20713003F2110 /* WOMappedDataTests.m */,
 				BCBD90B20FC20713003F2110 /* WOObjectTests.h */,
@@ -494,6 +499,7 @@
 				BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */,
 				BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */,
 				BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */,
+				BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

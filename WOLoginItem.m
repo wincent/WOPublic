@@ -51,11 +51,13 @@
 
 + (WOLoginItem *)loginItemWithName:(NSString *)aName path:(NSString *)aPath hidden:(BOOL)isHidden global:(BOOL)isGlobal
 {
+    WOParameterCheck(aPath != nil);
     return [[self alloc] initWithName:aName path:aPath hidden:isHidden global:isGlobal];
 }
 
 - (id)initWithName:(NSString *)aName path:(NSString *)aPath hidden:(BOOL)isHidden global:(BOOL)isGlobal
 {
+    WOParameterCheck(aPath != nil);
     if ((self = [super init]))
     {
         name    = [aName copy];

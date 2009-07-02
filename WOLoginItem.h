@@ -41,12 +41,14 @@
 }
 
 //! aName may be nil.
+//! raises if aPath is nil.
 + (WOLoginItem *)loginItemWithName:(NSString *)aName
                               path:(NSString *)aPath
                             hidden:(BOOL)isHidden
                             global:(BOOL)isGlobal;
 
 //! aName may be nil.
+//! raises if aPath is nil.
 - (id)initWithName:(NSString *)aName
               path:(NSString *)aPath
             hidden:(BOOL)isHidden
