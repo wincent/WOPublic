@@ -38,6 +38,7 @@
 		BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */; };
 		BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */; };
 		BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */; };
+		BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -116,6 +117,8 @@
 		BC0BA05E0FFD25CD007AE543 /* debug-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "debug-style.xcconfig"; path = "buildtools/debug-style.xcconfig"; sourceTree = "<group>"; };
 		BC0BA05F0FFD25CD007AE543 /* release-style.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "release-style.xcconfig"; path = "buildtools/release-style.xcconfig"; sourceTree = "<group>"; };
 		BC0BA0660FFD2603007AE543 /* buildtools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buildtools; sourceTree = "<group>"; };
+		BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WOConvenience.m"; sourceTree = "<group>"; };
+		BC0BA1800FFD30A3007AE543 /* NSArray+WOConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WOConvenience.h"; sourceTree = "<group>"; };
 		BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOPathUtilities.m"; sourceTree = "<group>"; };
 		BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOPathUtilities.h"; sourceTree = "<group>"; };
 		BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOPathUtilities.h"; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 		BCBD90660FC2069F003F2110 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				BC0BA1800FFD30A3007AE543 /* NSArray+WOConvenience.h */,
+				BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */,
 				BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */,
 				BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */,
 				BCBD90840FC206FC003F2110 /* NSFileManager+WOPathUtilities.h */,
@@ -502,6 +507,7 @@
 				BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */,
 				BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */,
 				BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */,
+				BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
