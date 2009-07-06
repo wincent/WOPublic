@@ -66,7 +66,7 @@ WO_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
 - (NSString *)temporaryDirectory
 {
     NSString *temp      = [self pathForFolder:kTemporaryFolderType domain:kSystemDomain];
-    NSString *template  = [temp stringByAppendingPathComponent:@"WOCommon.XXXXXXXXXXXXXXXX"];
+    NSString *template  = [temp stringByAppendingPathComponent:@"WOPublic.XXXXXXXXXXXXXXXX"];
     return [self temporaryDirectoryUsingTemplate:template];
 }
 

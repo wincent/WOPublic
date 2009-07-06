@@ -266,7 +266,7 @@ do                                                                          \
 //! extension to the application bundle identifier. In cases where the bundle
 //! identifier cannot be determined, the default log file name will be
 //! WO_DEFAULT_LOG_FILE_NAME with the extension WO_LOG_FILE_EXTENSION.
-#define WO_DEFAULT_LOG_FILE_NAME @"WOCommon"
+#define WO_DEFAULT_LOG_FILE_NAME @"WOPublic"
 
 #define WO_LOG_FILE_EXTENSION @"log"
 

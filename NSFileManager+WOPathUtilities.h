@@ -46,7 +46,7 @@ WO_DECLARE_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
 //! \param create Whether the folder should be created if it does not already exist
 - (NSString *)pathForFolder:(OSType)type domain:(short)domain create:(BOOL)create;
 
-//! Objective-C wrapper for the mkdtemp function. Invokes temporaryDirectoryUsingTemplate: with an \p aString parameter obtained by calling pathForFolder:domain: with a \p type of kTemporaryFolderType and kSystemDomain \p domain and appending the path component "WOCommon.XXXXXXXXXXXXXXXX"
+//! Objective-C wrapper for the mkdtemp function. Invokes temporaryDirectoryUsingTemplate: with an \p aString parameter obtained by calling pathForFolder:domain: with a \p type of kTemporaryFolderType and kSystemDomain \p domain and appending the path component "WOPublic.XXXXXXXXXXXXXXXX"
 - (NSString *)temporaryDirectory;
 
 //! \param aString A path template of the form "/tmp/templateXXXX" with any number of Xs
