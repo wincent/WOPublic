@@ -95,7 +95,7 @@
             [WOLoginItem sessionLoginItemWithRef:item];
 
         // login item could be nil, so avoid throwing an exception here
-        // see: <http://wincent.com/a/support/bugs/show_bug.cgi?id=636>
+        // see: https://wincent.com/issues/636
         if (login)
             [items addObject:login];
     }

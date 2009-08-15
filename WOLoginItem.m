@@ -93,7 +93,7 @@
         OSStatus err = LSSharedFileListItemResolve(aRef, 0, &URL, NULL);
         if (err == fnfErr)
         {
-            // see: <http://wincent.com/a/support/bugs/show_bug.cgi?id=636>
+            // see: https://wincent.com/issues/636
             [WOLog err:@"LSSharedFileListItemResolve returned error %d (stale entry in login items no longer present on disk?)", err];
             return nil;
         }
