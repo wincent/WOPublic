@@ -26,7 +26,10 @@
 
 #import "WOObject.h"
 
-//! Objective-C wrapper for the Carbon ProcessSerialNumber struct (as defined in processes.h) useful for cases where one wishes to pass a ProcessSerialNumber encapsulated inside an object. Also contains some convenience methods for working with PSNs, converting them to and from PIDs and so forth.
+//! Objective-C wrapper for the Carbon ProcessSerialNumber struct (as defined in
+//! processes.h) useful for cases where one wishes to pass a ProcessSerialNumber
+//! encapsulated inside an object. Also contains some convenience methods for
+//! working with PSNs, converting them to and from PIDs and so forth.
 //!
 //! Required classes:
 //!     - WOLogManager

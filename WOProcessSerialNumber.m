@@ -118,7 +118,8 @@ static ProcessSerialNumber WONoProcess;
     if (err == noErr)
         return returnValue;
     if (err != procNotFound)
-        [WOLog err:@"GetProcessForPID" no:err]; // procNotFound is a "harmless" error; log all others
+        // procNotFound is a "harmless" error; log all others
+        [WOLog err:@"GetProcessForPID" no:err];
     return WONoProcess;
 }
 
@@ -130,7 +131,8 @@ static ProcessSerialNumber WONoProcess;
     if (err == noErr)
         return returnValue;
     if (err != procNotFound)
-        [WOLog err:@"GetProcessPID" no:err];    // procNotFound is a "harmless" error; log all others
+        // procNotFound is a "harmless" error; log all others
+        [WOLog err:@"GetProcessPID" no:err];
     return 0;
 }
 
