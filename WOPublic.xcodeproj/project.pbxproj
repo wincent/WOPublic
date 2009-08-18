@@ -60,6 +60,8 @@
 		BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */; };
 		BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */; };
 		BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */; };
+		BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F41103B24C8008F2449 /* WOSysctl.m */; };
+		BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,10 @@
 		BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WOCreation.h"; sourceTree = "<group>"; };
 		BCBD90E60FC21402003F2110 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOTest.xcodeproj; path = ../../WOTest/src/WOTest.xcodeproj; sourceTree = SOURCE_ROOT; };
+		BCF27F40103B24C8008F2449 /* WOSysctl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOSysctl.h; sourceTree = "<group>"; };
+		BCF27F41103B24C8008F2449 /* WOSysctl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOSysctl.m; sourceTree = "<group>"; };
+		BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessSerialNumber.m; sourceTree = "<group>"; };
+		BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessSerialNumber.h; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -225,16 +231,20 @@
 				BCBD909B0FC20709003F2110 /* WOArgumentArray.m */,
 				BCBD90950FC20709003F2110 /* WOKernelQueue.h */,
 				BCBD909A0FC20709003F2110 /* WOKernelQueue.m */,
-				BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */,
-				BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */,
 				BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */,
 				BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */,
+				BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */,
+				BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */,
 				BCBD909D0FC20709003F2110 /* WOLogManager.h */,
 				BCBD90940FC20709003F2110 /* WOLogManager.m */,
 				BCBD90970FC20709003F2110 /* WOMappedData.h */,
 				BCBD909C0FC20709003F2110 /* WOMappedData.m */,
 				BCBD90960FC20709003F2110 /* WOObject.h */,
 				BCBD909F0FC20709003F2110 /* WOObject.m */,
+				BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */,
+				BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */,
+				BCF27F40103B24C8008F2449 /* WOSysctl.h */,
+				BCF27F41103B24C8008F2449 /* WOSysctl.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -508,6 +518,8 @@
 				BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */,
 				BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */,
 				BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */,
+				BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */,
+				BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
