@@ -113,7 +113,7 @@ static WOSysctl *WOSharedSysctl = nil;
         [WOLog err:@"sysctl (%d: %s)", errno, strerror(errno)];
     else
     {
-        struct kinfo_proc *processes = wmalloc(length);
+        struct kinfo_proc *processes = emalloc(length);
         if (sysctl(mib, 4, processes, &length, NULL, 0) == -1)
             [WOLog err:@"sysctl (%d: %s)", errno, strerror(errno)];
         else
