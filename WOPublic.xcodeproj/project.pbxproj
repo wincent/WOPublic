@@ -62,6 +62,7 @@
 		BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */; };
 		BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F41103B24C8008F2449 /* WOSysctl.m */; };
 		BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */; };
+		BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF286D810401B76008F2449 /* WOProcessLifetime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,8 @@
 		BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessSerialNumber.m; sourceTree = "<group>"; };
 		BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessSerialNumber.h; sourceTree = "<group>"; };
 		BCF286D210401B3C008F2449 /* WOEnumerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOEnumerate.h; sourceTree = "<group>"; };
+		BCF286D710401B76008F2449 /* WOProcessLifetime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessLifetime.h; sourceTree = "<group>"; };
+		BCF286D810401B76008F2449 /* WOProcessLifetime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessLifetime.m; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +245,8 @@
 				BCBD909C0FC20709003F2110 /* WOMappedData.m */,
 				BCBD90960FC20709003F2110 /* WOObject.h */,
 				BCBD909F0FC20709003F2110 /* WOObject.m */,
+				BCF286D710401B76008F2449 /* WOProcessLifetime.h */,
+				BCF286D810401B76008F2449 /* WOProcessLifetime.m */,
 				BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */,
 				BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */,
 				BCF27F40103B24C8008F2449 /* WOSysctl.h */,
@@ -522,6 +527,7 @@
 				BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */,
 				BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */,
 				BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */,
+				BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
