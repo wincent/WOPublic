@@ -173,6 +173,7 @@
 		BCF27F41103B24C8008F2449 /* WOSysctl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOSysctl.m; sourceTree = "<group>"; };
 		BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessSerialNumber.m; sourceTree = "<group>"; };
 		BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessSerialNumber.h; sourceTree = "<group>"; };
+		BCF286D210401B3C008F2449 /* WOEnumerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOEnumerate.h; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -321,6 +322,7 @@
 			children = (
 				BCBD909E0FC20709003F2110 /* WOConvenienceMacros.h */,
 				BCBD90980FC20709003F2110 /* WODebugMacros.h */,
+				BCF286D210401B3C008F2449 /* WOEnumerate.h */,
 				BCBD90A00FC20709003F2110 /* WOMemory.h */,
 				BCBD90990FC20709003F2110 /* WOMemoryBarrier.h */,
 			);
