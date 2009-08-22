@@ -1,7 +1,28 @@
 // WOProcessManager.h
-// WOCommon
+// WOPublic
 //
 // Copyright 2003-2009 Wincent Colaiuta. All rights reserved.
+//
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+//
+// 1. Redistributions of source code must retain the above copyright notice,
+//    this list of conditions and the following disclaimer.
+// 2. Redistributions in binary form must reproduce the above copyright notice,
+//    this list of conditions and the following disclaimer in the documentation
+//    and/or other materials provided with the distribution.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
 
 #import "WOObject.h"
 
@@ -13,8 +34,8 @@
 //!     - WOObject
 //!     - WOProcessSerialNumber
 //!
-//! \note The singleton pattern implemented by WOProcessManager is not designed with subclassing in mind; unpredictable results may occur if subclassed.
-//!
+//! \note The singleton pattern implemented by WOProcessManager is not designed
+//! with subclassing in mind; unpredictable results may occur if subclassed.
 @interface WOProcessManager : WOObject {
 
     WOProcessSerialNumber *noProcess;
@@ -29,7 +50,8 @@
 #pragma mark -
 #pragma mark Methods for determining if a process is running
 
-//! Returns YES if a process is running matching the submitted PSN. Does this by scanning the list of running processes for a match.
+//! Returns YES if a process is running matching the submitted PSN. Does this
+//! by scanning the list of running processes for a match.
 - (BOOL)processRunningWithPSN:(ProcessSerialNumber)PSN;
 
 //! Raises an exception if \p name is nil
@@ -42,7 +64,8 @@
 #pragma mark -
 #pragma mark Methods for determining if a process is hidden
 
-//! Returns YES if the process identified by \p signature is running and hidden, YES if it is not running, NO if it is running and visible.
+//! Returns YES if the process identified by \p signature is running and
+//! hidden, YES if it is not running, NO if it is running and visible.
 - (BOOL)processHiddenWithSignature:(UInt32)signature;
 
 #pragma mark -
@@ -65,8 +88,9 @@
 #pragma mark -
 #pragma mark Methods for obtaining a Process Serial Number (PSN) for a process
 
-//! Tries to obtain the PSN for the process with name \p name. Uses the Carbon Process Manager.
-//! \sa See the WOsysctl class for an alternative process-finding methods based on the BSD sysctl API.
+//! Tries to obtain the PSN for the process with name \p name. Uses the Carbon
+//! Process Manager. ! \sa See the WOsysctl class for an alternative
+//! process-finding methods based on the BSD sysctl API.
 - (ProcessSerialNumber)PSNForProcessName:(NSString *)name;
 
 //! Raises an exception if \p identifier is nil
