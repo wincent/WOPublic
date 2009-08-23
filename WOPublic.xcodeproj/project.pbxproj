@@ -63,6 +63,7 @@
 		BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F41103B24C8008F2449 /* WOSysctl.m */; };
 		BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */; };
 		BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF286D810401B76008F2449 /* WOProcessLifetime.m */; };
+		BCF286EC1041C9F3008F2449 /* WOProcessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF286EA1041C9F2008F2449 /* WOProcessManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +178,8 @@
 		BCF286D210401B3C008F2449 /* WOEnumerate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOEnumerate.h; sourceTree = "<group>"; };
 		BCF286D710401B76008F2449 /* WOProcessLifetime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessLifetime.h; sourceTree = "<group>"; };
 		BCF286D810401B76008F2449 /* WOProcessLifetime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessLifetime.m; sourceTree = "<group>"; };
+		BCF286EA1041C9F2008F2449 /* WOProcessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessManager.m; sourceTree = "<group>"; };
+		BCF286EB1041C9F2008F2449 /* WOProcessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOProcessManager.h; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +250,8 @@
 				BCBD909F0FC20709003F2110 /* WOObject.m */,
 				BCF286D710401B76008F2449 /* WOProcessLifetime.h */,
 				BCF286D810401B76008F2449 /* WOProcessLifetime.m */,
+				BCF286EB1041C9F2008F2449 /* WOProcessManager.h */,
+				BCF286EA1041C9F2008F2449 /* WOProcessManager.m */,
 				BCF27F43103B24C8008F2449 /* WOProcessSerialNumber.h */,
 				BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */,
 				BCF27F40103B24C8008F2449 /* WOSysctl.h */,
@@ -528,6 +533,7 @@
 				BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */,
 				BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */,
 				BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */,
+				BCF286EC1041C9F3008F2449 /* WOProcessManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
