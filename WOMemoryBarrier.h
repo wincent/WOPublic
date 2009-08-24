@@ -126,7 +126,7 @@
 //! sees the new state. Only when used in pairs can these memory barriers offer
 //! useful guarantees.
 //!
-//! \sa http://kerneltrap.org/node/6431
+//! \sa http://repo.or.cz/w/linux-2.6.git?a=blob_plain;f=Documentation/memory-barriers.txt
 //! \sa http://www.nwcpp.org/Downloads/2004/DCLP_notes.pdf
 
 #if defined(__i386__)
