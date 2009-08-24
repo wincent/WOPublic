@@ -25,7 +25,7 @@
 // POSSIBILITY OF SUCH DAMAGE.
 
 //! \file
-//! Memory barrier macros for ppc, ppc64, i386/SSE and i386
+//! Memory barrier macros for i386/SSE and i386
 //!
 //! This file provides a full bi-directional memory barrier macro,
 //! WO_MEMORY_BARRIER, and the following uni-directional barriers:
@@ -129,31 +129,7 @@
 //! \sa http://kerneltrap.org/node/6431
 //! \sa http://www.nwcpp.org/Downloads/2004/DCLP_notes.pdf
 
-#if defined(__ppc__)
-
-// ppc
-
-//! Prevents loads being reordered across the point at which it appears.
-//!
-//! It implies a data dependency barrier.
-//! It is typically used immediately after a critical read (load) operation, and
-//! used in conjunction with a corresponding write memory barrier.
-#define WO_READ_MEMORY_BARRIER()    __asm__ __volatile__ ("sync":::"memory")
-
-//! Prevents stores being reordered across the point at which it appears.
-//!
-//! It is typically used immediately before a critical write (store) operation,
-//! and used in conjunction with a corresponding read memory barrier.
-#define WO_WRITE_MEMORY_BARRIER()   __asm__ __volatile__ ("eieio":::"memory")
-
-//! Prevents loads and stores being reordered across the point at which it
-//! appears.
-//!
-//! This is a full bi-directional "fence" that combines the functionality of
-//! both a read and a write memory barrier.
-#define WO_MEMORY_BARRIER()         __asm__ __volatile__ ("sync":::"memory")
-
-#elif defined(__i386__)
+#if defined(__i386__)
 #if defined(__SSE__)
 
 // i386 with SSE
@@ -169,13 +145,6 @@
 #define WO_MEMORY_BARRIER()         __asm__ __volatile__ ("lock; addl $0,0(%%esp)":::"memory")
 
 #endif
-#elif defined(__ppc64__)
-
-// ppc64
-#define WO_READ_MEMORY_BARRIER()    __asm__ __volatile__ ("lwsync":::"memory")
-#define WO_WRITE_MEMORY_BARRIER()   __asm__ __volatile__ ("sync":::"memory")
-#define WO_MEMORY_BARRIER()         __asm__ __volatile__ ("sync":::"memory")
-
 #else
 
 #warning Unsupported architecture
