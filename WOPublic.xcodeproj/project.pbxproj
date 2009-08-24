@@ -39,6 +39,8 @@
 		BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */; };
 		BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */; };
 		BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */; };
+		BC40E83D1043176300B756BA /* WOHost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E83C1043176300B756BA /* WOHost.m */; };
+		BC40E84A1043177600B756BA /* WOHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E8491043177600B756BA /* WOHostTests.m */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -123,6 +125,10 @@
 		BC0BA0660FFD2603007AE543 /* buildtools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = buildtools; sourceTree = "<group>"; };
 		BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WOConvenience.m"; sourceTree = "<group>"; };
 		BC0BA1800FFD30A3007AE543 /* NSArray+WOConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+WOConvenience.h"; sourceTree = "<group>"; };
+		BC40E83B1043176300B756BA /* WOHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHost.h; sourceTree = "<group>"; };
+		BC40E83C1043176300B756BA /* WOHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOHost.m; sourceTree = "<group>"; };
+		BC40E8481043177600B756BA /* WOHostTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOHostTests.h; path = tests/WOHostTests.h; sourceTree = "<group>"; };
+		BC40E8491043177600B756BA /* WOHostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHostTests.m; path = tests/WOHostTests.m; sourceTree = "<group>"; };
 		BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOPathUtilities.m"; sourceTree = "<group>"; };
 		BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOPathUtilities.h"; sourceTree = "<group>"; };
 		BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOPathUtilities.h"; sourceTree = "<group>"; };
@@ -236,6 +242,8 @@
 			children = (
 				BCBD90930FC20709003F2110 /* WOArgumentArray.h */,
 				BCBD909B0FC20709003F2110 /* WOArgumentArray.m */,
+				BC40E83B1043176300B756BA /* WOHost.h */,
+				BC40E83C1043176300B756BA /* WOHost.m */,
 				BCBD90950FC20709003F2110 /* WOKernelQueue.h */,
 				BCBD909A0FC20709003F2110 /* WOKernelQueue.m */,
 				BC0B9F260FFCD02F007AE543 /* WOLoginItem.h */,
@@ -354,6 +362,8 @@
 				BCBD90AB0FC20713003F2110 /* NSString+WOPathUtilitiesTests.m */,
 				BCBD90A90FC20713003F2110 /* WOArgumentArrayTests.h */,
 				BCBD90AD0FC20713003F2110 /* WOArgumentArrayTests.m */,
+				BC40E8481043177600B756BA /* WOHostTests.h */,
+				BC40E8491043177600B756BA /* WOHostTests.m */,
 				BCBD90AA0FC20713003F2110 /* WOKernelQueueTests.h */,
 				BCBD90AF0FC20713003F2110 /* WOKernelQueueTests.m */,
 				BC0B9F310FFCD0EB007AE543 /* WOLoginItemTests.h */,
@@ -534,6 +544,8 @@
 				BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */,
 				BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */,
 				BCF286EC1041C9F3008F2449 /* WOProcessManager.m in Sources */,
+				BC40E83D1043176300B756BA /* WOHost.m in Sources */,
+				BC40E84A1043177600B756BA /* WOHostTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
