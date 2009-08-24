@@ -30,12 +30,13 @@
 // system headers
 #import <libkern/OSAtomic.h>        /* OSAtomicIncrement32Barrier() */
 
-// other headers
+// macro headers
 #import "WOConvenienceMacros.h"
+#import "WODebugMacros.h"
+
+// other class headers
 #import "WOLogManager.h"
 
-// WOPublic headers
-#import "WOPublic/WODebugMacros.h"
 
 #pragma mark -
 #pragma mark Class variables
@@ -180,7 +181,8 @@ WO_CLASS_EXPORT(WOHost);
 
 - (void)registerForCallbacks
 {
-    unless ([self hostName]) return;
+    if (![self hostName])
+        return;
 
     SCNetworkConnectionFlags flags;
     context.version         = 0;
