@@ -41,6 +41,7 @@
 		BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */; };
 		BC40E83D1043176300B756BA /* WOHost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E83C1043176300B756BA /* WOHost.m */; };
 		BC40E84A1043177600B756BA /* WOHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E8491043177600B756BA /* WOHostTests.m */; };
+		BC40E85D1043668200B756BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40E85C1043668200B756BA /* SystemConfiguration.framework */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -129,6 +130,7 @@
 		BC40E83C1043176300B756BA /* WOHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOHost.m; sourceTree = "<group>"; };
 		BC40E8481043177600B756BA /* WOHostTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOHostTests.h; path = tests/WOHostTests.h; sourceTree = "<group>"; };
 		BC40E8491043177600B756BA /* WOHostTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOHostTests.m; path = tests/WOHostTests.m; sourceTree = "<group>"; };
+		BC40E85C1043668200B756BA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOPathUtilities.m"; sourceTree = "<group>"; };
 		BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOPathUtilities.h"; sourceTree = "<group>"; };
 		BCBD90830FC206FC003F2110 /* NSMutableString+WOPathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+WOPathUtilities.h"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
+				BC40E85D1043668200B756BA /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +274,7 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC40E85C1043668200B756BA /* SystemConfiguration.framework */,
 				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
