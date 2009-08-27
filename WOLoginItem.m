@@ -122,12 +122,11 @@
     if (!properties)
         return NO;
     CFMakeCollectable(properties);
-    CFURLRef URL = CFURLCreateWithFileSystemPath(NULL, (CFStringRef)self.path, kCFURLPOSIXPathStyle, false);
-    LSSharedFileListItemRef ref = LSSharedFileListInsertItemURL(listRef, kLSSharedFileListItemLast, NULL, NULL, URL, properties,
-                                                                NULL);
-    WOMakeCollectable(ref);
-    itemRef = ref;
-    return (ref != NULL);
+    CFURLRef URL = WOMakeCollectable(CFURLCreateWithFileSystemPath(NULL,
+        (CFStringRef)self.path, kCFURLPOSIXPathStyle, false));
+    itemRef = (LSSharedFileListItemRef)WOMakeCollectable(LSSharedFileListInsertItemURL(listRef,
+        kLSSharedFileListItemLast, NULL, NULL, URL, properties, NULL));
+    return (itemRef != NULL);
 }
 
 #pragma mark -
