@@ -1,7 +1,7 @@
 // NSFileManager+WOPathUtilitiesTests.m
 // WOPublic
 //
-// Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2006-2010 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -40,26 +40,46 @@
 
 @implementation NSFileManager_WOPathUtilitiesTests
 
+- (void)preflight
+{
+    manager = [NSFileManager defaultManager];
+}
+
 - (void)testPathForFolder
 {
     // unfortunately have to hardcode these expected results
-    NSString *expected = @"/Library/Contextual Menu Items";
-    NSString *actual = [[NSFileManager defaultManager] pathForFolder:kContextualMenuItemsFolderType domain:kLocalDomain];
+    NSString *expected = @"/Library/Contextual Menu Items"; // exists by default
+    NSString *actual = [manager pathForFolder:kContextualMenuItemsFolderType
+                                       domain:kLocalDomain];
     WO_TEST_EQ(expected, actual);
 
+    // this one most likely doesn't exist by default
+    // (at least, it doesn't on my clean Mac OS X Snow Leopard install)
     expected = @"/System/Library/Contextual Menu Items";
-    actual = [[NSFileManager defaultManager] pathForFolder:kContextualMenuItemsFolderType domain:kSystemDomain];
-    WO_TEST_EQ(expected, actual);
+    actual = [[NSFileManager defaultManager] pathForFolder:kContextualMenuItemsFolderType
+                                                    domain:kSystemDomain];
+    if ([manager fileExistsAtPath:expected])
+        WO_TEST_EQ(expected, actual);
+    else
+        WO_TEST_NIL(actual);
 
-    // can't use this test (may return nil if path doesn't exist)
-    //expected = @"/Network/Library/Contextual Menu Items";
-    //actual = [[NSFileManager defaultManager] pathForFolder:kContextualMenuItemsFolderType domain:kNetworkDomain];
-    //WO_TEST_EQ(expected, actual);
+    // another one unlikely to exist
+    expected = @"/Network/Library/Contextual Menu Items";
+    actual = [manager pathForFolder:kContextualMenuItemsFolderType
+                             domain:kNetworkDomain];
+    if ([manager fileExistsAtPath:expected])
+        WO_TEST_EQ(expected, actual);
+    else
+        WO_TEST_NIL(actual);
 
-    // can't use this test either for exactly the same reason
-    //expected = [NSHomeDirectory() stringByAppendingPathComponents:WO_ARRAY(@"Library", @"Contextual Menu Items")];
-    //actual = [[NSFileManager defaultManager] pathForFolder:kContextualMenuItemsFolderType domain:kUserDomain];
-    //WO_TEST_EQ(expected, actual);
+    // and another which we can't be sure about
+    expected = [NSHomeDirectory() stringByAppendingPathComponents:WO_ARRAY(@"Library", @"Contextual Menu Items")];
+    actual = [manager pathForFolder:kContextualMenuItemsFolderType
+                             domain:kUserDomain];
+    if ([manager fileExistsAtPath:expected])
+        WO_TEST_EQ(expected, actual);
+    else
+        WO_TEST_NIL(actual);
 }
 
 - (void)testPathForFolderCreate
@@ -78,7 +98,6 @@
 - (void)testTouchFileAtPath
 {
     // should create file if it doesn't already exist
-    NSFileManager   *manager            = [NSFileManager defaultManager];
     NSString        *temp               = [manager temporaryDirectory];
     WOCheck(temp != nil);
     NSString        *target             = [temp stringByAppendingPathComponent:@"testfile"];
@@ -100,7 +119,6 @@
 
 - (void)testCreateDirectoryAtPathCreateParent
 {
-    NSFileManager   *manager        = [NSFileManager defaultManager];
     NSString        *temp           = [manager temporaryDirectory];
     WOCheck(temp != nil);
 
