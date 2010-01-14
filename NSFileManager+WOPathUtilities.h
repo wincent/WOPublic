@@ -1,7 +1,7 @@
 // NSFileManager+WOPathUtilities.h
 // WOPublic
 //
-// Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2006-2010 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -64,6 +64,9 @@ WO_DECLARE_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
 //! \param path The path to the directory to be created. May be an absolute path or a relative path (relative to the current working directory).
 //! \param attributes The attributes to be passed to Cocoa's createDirectoryAtPath:attributes: method
 //! \param flag Create intermediate parent directories if YES
-- (BOOL)createDirectoryAtPath:(NSString *)path attributes:(NSDictionary *)attributes createParents:(BOOL)flag;
+//! \deprecated This method was made obsolete by the createDirectoryAtPath:withIntermediateDirectories:attributes:error: method which was added to NSFileManager in Leopard.
+- (BOOL)createDirectoryAtPath:(NSString *)path
+                   attributes:(NSDictionary *)attributes
+                createParents:(BOOL)flag WO_DEPRECATED;
 
 @end

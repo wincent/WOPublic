@@ -1,7 +1,7 @@
 // NSFileManager+WOPathUtilities.m
 // WOPublic
 //
-// Copyright 2006-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2006-2010 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -100,38 +100,10 @@ WO_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
 
 - (BOOL)createDirectoryAtPath:(NSString *)path attributes:(NSDictionary *)attributes createParents:(BOOL)flag
 {
-    if (!flag) return [self createDirectoryAtPath:path attributes:attributes];
-    if (!path) return NO;
-    NSArray     *components = [path pathComponents];
-    unsigned    count       = [components count];
-    if (count > 1)
-    {
-        NSString *parent = [path stringByDeletingLastPathComponent];
-        BOOL isDirectory;
-        if ([self fileExistsAtPath:parent isDirectory:&isDirectory])
-        {
-            if (isDirectory)    // parent exists and is a directory
-                return [self createDirectoryAtPath:path attributes:attributes];
-            else                // parent exists and is not a directory!
-            {
-                [WOLog err:@"failed to create directory at path \"%@\" (parent \"%@\" exists and is not a directory)", path, parent];
-                return NO;
-            }
-        }
-        else                    // parent does not exist, create it recursively
-        {
-            if ([self createDirectoryAtPath:parent attributes:attributes createParents:flag])
-                return [self createDirectoryAtPath:path attributes:attributes];
-            else
-            {
-                [WOLog err:@"failed to create directory at path \"%@\" (couldn't create parent \"%@\")", path, parent];
-                return NO;      // couldn't create parent
-            }
-        }
-    }
-    else if (count == 1)
-        return [self createDirectoryAtPath:path attributes:attributes];
-    return NO;                  // count is 0, can't create a directory with zero components
+    return [self createDirectoryAtPath:path
+           withIntermediateDirectories:flag
+                            attributes:attributes
+                                 error:NULL];
 }
 
 @end
