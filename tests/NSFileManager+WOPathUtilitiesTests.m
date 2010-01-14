@@ -106,13 +106,17 @@
     WO_TEST([manager fileExistsAtPath:target]);
 
     // should update file if it does exist
-    [manager changeFileAttributes:WO_DICTIONARY(NSFileModificationDate, [NSDate dateWithTimeIntervalSinceNow:-60],
-                                                NSFileCreationDate,     [NSDate dateWithTimeIntervalSinceNow:-60]) atPath:target];
-    NSDate          *previousModDate    = [[manager fileAttributesAtPath:target traverseLink:YES] fileModificationDate];
+    WO_TEST([manager setAttributes:WO_DICTIONARY(NSFileModificationDate,
+                                                 [NSDate dateWithTimeIntervalSinceNow:-60],
+                                                 NSFileCreationDate,
+                                                 [NSDate dateWithTimeIntervalSinceNow:-60])
+                      ofItemAtPath:target
+                             error:NULL]);
+    NSDate          *previousModDate    = [[manager attributesOfItemAtPath:target error:NULL] fileModificationDate];
     WOCheck([[NSDate date] timeIntervalSinceDate:previousModDate] > 50);
     WOCheck(previousModDate != nil);
     [manager touchFileAtPath:target];
-    NSDate          *newModDate         = [[manager fileAttributesAtPath:target traverseLink:YES] fileModificationDate];
+    NSDate          *newModDate         = [[manager attributesOfItemAtPath:target error:NULL] fileModificationDate];
     WOCheck(newModDate != nil);
     WO_TEST([newModDate timeIntervalSinceDate:previousModDate] > 50);
 }
