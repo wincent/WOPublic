@@ -63,6 +63,8 @@
 		BCBD90BD0FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90B50FC20713003F2110 /* NSMutableString+WOEditingUtilitiesTests.m */; };
 		BCBD90CD0FC209DE003F2110 /* NSDictionary+WOCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90CB0FC209DE003F2110 /* NSDictionary+WOCreationTests.m */; };
 		BCBD90D40FC209EB003F2110 /* NSDictionary+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90D20FC209EB003F2110 /* NSDictionary+WOCreation.m */; };
+		BCE6277210FF873D000CCA89 /* NSString+WOURLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6276F10FF873D000CCA89 /* NSString+WOURLUtilities.m */; };
+		BCE6277310FF873D000CCA89 /* NSURL+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE6277110FF873D000CCA89 /* NSURL+WOConvenience.m */; };
 		BCF27F44103B24C8008F2449 /* WOSysctl.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F41103B24C8008F2449 /* WOSysctl.m */; };
 		BCF27F45103B24C8008F2449 /* WOProcessSerialNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */; };
 		BCF286D910401B76008F2449 /* WOProcessLifetime.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF286D810401B76008F2449 /* WOProcessLifetime.m */; };
@@ -179,6 +181,10 @@
 		BCBD90D30FC209EB003F2110 /* NSDictionary+WOCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+WOCreation.h"; sourceTree = "<group>"; };
 		BCBD90E60FC21402003F2110 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BCBD90FD0FC214F9003F2110 /* WOTest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WOTest.xcodeproj; path = ../../WOTest/src/WOTest.xcodeproj; sourceTree = SOURCE_ROOT; };
+		BCE6276E10FF873D000CCA89 /* NSString+WOURLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WOURLUtilities.h"; sourceTree = "<group>"; };
+		BCE6276F10FF873D000CCA89 /* NSString+WOURLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WOURLUtilities.m"; sourceTree = "<group>"; };
+		BCE6277010FF873D000CCA89 /* NSURL+WOConvenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+WOConvenience.h"; sourceTree = "<group>"; };
+		BCE6277110FF873D000CCA89 /* NSURL+WOConvenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+WOConvenience.m"; sourceTree = "<group>"; };
 		BCF27F40103B24C8008F2449 /* WOSysctl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOSysctl.h; sourceTree = "<group>"; };
 		BCF27F41103B24C8008F2449 /* WOSysctl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOSysctl.m; sourceTree = "<group>"; };
 		BCF27F42103B24C8008F2449 /* WOProcessSerialNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOProcessSerialNumber.m; sourceTree = "<group>"; };
@@ -335,6 +341,10 @@
 				BCBD908B0FC206FC003F2110 /* NSString+WOFileUtilities.m */,
 				BCBD90820FC206FC003F2110 /* NSString+WOPathUtilities.h */,
 				BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */,
+				BCE6276E10FF873D000CCA89 /* NSString+WOURLUtilities.h */,
+				BCE6276F10FF873D000CCA89 /* NSString+WOURLUtilities.m */,
+				BCE6277010FF873D000CCA89 /* NSURL+WOConvenience.h */,
+				BCE6277110FF873D000CCA89 /* NSURL+WOConvenience.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -550,6 +560,8 @@
 				BCF286EC1041C9F3008F2449 /* WOProcessManager.m in Sources */,
 				BC40E83D1043176300B756BA /* WOHost.m in Sources */,
 				BC40E84A1043177600B756BA /* WOHostTests.m in Sources */,
+				BCE6277210FF873D000CCA89 /* NSString+WOURLUtilities.m in Sources */,
+				BCE6277310FF873D000CCA89 /* NSURL+WOConvenience.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
