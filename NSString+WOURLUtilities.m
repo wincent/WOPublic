@@ -27,7 +27,7 @@
 // category header
 #import "NSString+WOURLUtilities.h"
 
-// other headers
+// other category headers
 #import "NSURL+WOConvenience.h"
 
 WO_CATEGORY_MARKER(NSString, WOURLUtilities);

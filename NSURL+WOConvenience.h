@@ -24,10 +24,11 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+// system header
 #import <Foundation/Foundation.h>
 
-// WOPublic headers
-#import "WOPublic/WOConvenienceMacros.h"
+// macro headers
+#import "WOConvenienceMacros.h"
 
 WO_DECLARE_CATEGORY_MARKER(NSURL, WOConvenience);
 

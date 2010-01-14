@@ -30,8 +30,8 @@
 // system headers
 #import <AppKit/AppKit.h>
 
-// WOPublic headers
-#import "WOPublic/WOMemory.h"
+// macro headers
+#import "WOMemory.h"
 
 WO_CATEGORY_MARKER(NSURL, WOConvenience);
 @implementation NSURL (WOConvenience)
