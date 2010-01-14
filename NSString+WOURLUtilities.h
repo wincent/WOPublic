@@ -32,6 +32,9 @@
 
 WO_DECLARE_CATEGORY_MARKER(NSString, WOURLUtilities);
 
+//! Required categories:
+//!     - NSURL (WOConvenience)
+//!
 @interface NSString (WOURLUtilities)
 
 #pragma mark -
