@@ -60,11 +60,10 @@ WO_DECLARE_CATEGORY_MARKER(NSFileManager, WOPathUtilities);
 //! \return YES on success and NO on failure
 - (BOOL)touchFileAtPath:(NSString *)path;
 
-//! If \p flag is NO this method merely calls Cocoa's createDirectoryAtPath:attributes: method; otherwise it attempts to create intermediate parent directories (similar in effect to the "-p" switch to mkdir(1). Given that this method ultimately called its Foundation counterpart it inherits its properties; namely: passing nil or an empty string as \p path will cause the mehod to return NO, and if a non-absolute path is supplied it will be interpreted as a path relative to the current working directory.
-//! \param path The path to the directory to be created. May be an absolute path or a relative path (relative to the current working directory).
-//! \param attributes The attributes to be passed to Cocoa's createDirectoryAtPath:attributes: method
-//! \param flag Create intermediate parent directories if YES
-//! \deprecated This method was made obsolete by the createDirectoryAtPath:withIntermediateDirectories:attributes:error: method which was added to NSFileManager in Leopard.
+
+//! \deprecated This method was made obsolete by the
+//! createDirectoryAtPath:withIntermediateDirectories:attributes:error: method
+//! which was added to NSFileManager in Leopard.
 - (BOOL)createDirectoryAtPath:(NSString *)path
                    attributes:(NSDictionary *)attributes
                 createParents:(BOOL)flag WO_DEPRECATED;
