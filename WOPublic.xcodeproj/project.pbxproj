@@ -41,6 +41,8 @@
 		BC0BA1810FFD30A3007AE543 /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */; };
 		BC245F53110341E30046B11B /* NSArray+WORubyBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245F52110341E30046B11B /* NSArray+WORubyBlocks.m */; };
 		BC245F5A110343510046B11B /* NSArray+WORubyBlocksTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245F59110343510046B11B /* NSArray+WORubyBlocksTest.m */; };
+		BC245FD0110358B90046B11B /* WOUsageMeterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FCF110358B90046B11B /* WOUsageMeterTests.m */; };
+		BC245FD4110358C60046B11B /* WOUsageMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FD3110358C60046B11B /* WOUsageMeter.m */; };
 		BC40E83D1043176300B756BA /* WOHost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E83C1043176300B756BA /* WOHost.m */; };
 		BC40E84A1043177600B756BA /* WOHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E8491043177600B756BA /* WOHostTests.m */; };
 		BC40E85D1043668200B756BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40E85C1043668200B756BA /* SystemConfiguration.framework */; };
@@ -134,6 +136,10 @@
 		BC245F52110341E30046B11B /* NSArray+WORubyBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+WORubyBlocks.m"; sourceTree = "<group>"; };
 		BC245F58110343510046B11B /* NSArray+WORubyBlocksTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+WORubyBlocksTest.h"; path = "tests/NSArray+WORubyBlocksTest.h"; sourceTree = "<group>"; };
 		BC245F59110343510046B11B /* NSArray+WORubyBlocksTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+WORubyBlocksTest.m"; path = "tests/NSArray+WORubyBlocksTest.m"; sourceTree = "<group>"; };
+		BC245FCE110358B90046B11B /* WOUsageMeterTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOUsageMeterTests.h; path = tests/WOUsageMeterTests.h; sourceTree = "<group>"; };
+		BC245FCF110358B90046B11B /* WOUsageMeterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOUsageMeterTests.m; path = tests/WOUsageMeterTests.m; sourceTree = "<group>"; };
+		BC245FD2110358C60046B11B /* WOUsageMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOUsageMeter.h; sourceTree = "<group>"; };
+		BC245FD3110358C60046B11B /* WOUsageMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOUsageMeter.m; sourceTree = "<group>"; };
 		BC40E83B1043176300B756BA /* WOHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHost.h; sourceTree = "<group>"; };
 		BC40E83C1043176300B756BA /* WOHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOHost.m; sourceTree = "<group>"; };
 		BC40E8481043177600B756BA /* WOHostTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOHostTests.h; path = tests/WOHostTests.h; sourceTree = "<group>"; };
@@ -255,6 +261,8 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BC245FD2110358C60046B11B /* WOUsageMeter.h */,
+				BC245FD3110358C60046B11B /* WOUsageMeter.m */,
 				BCBD90930FC20709003F2110 /* WOArgumentArray.h */,
 				BCBD909B0FC20709003F2110 /* WOArgumentArray.m */,
 				BC40E83B1043176300B756BA /* WOHost.h */,
@@ -372,6 +380,8 @@
 		BCBD90690FC206BE003F2110 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				BC245FCE110358B90046B11B /* WOUsageMeterTests.h */,
+				BC245FCF110358B90046B11B /* WOUsageMeterTests.m */,
 				BC245F58110343510046B11B /* NSArray+WORubyBlocksTest.h */,
 				BC245F59110343510046B11B /* NSArray+WORubyBlocksTest.m */,
 				BCBD90CC0FC209DE003F2110 /* NSDictionary+WOCreationTests.h */,
@@ -574,6 +584,8 @@
 				BCE6277310FF873D000CCA89 /* NSURL+WOConvenience.m in Sources */,
 				BC245F53110341E30046B11B /* NSArray+WORubyBlocks.m in Sources */,
 				BC245F5A110343510046B11B /* NSArray+WORubyBlocksTest.m in Sources */,
+				BC245FD0110358B90046B11B /* WOUsageMeterTests.m in Sources */,
+				BC245FD4110358C60046B11B /* WOUsageMeter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
