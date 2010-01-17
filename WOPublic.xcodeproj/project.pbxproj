@@ -34,7 +34,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		BC0B9F270FFCD02F007AE543 /* WOLoginItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */; };
 		BC0B9F280FFCD02F007AE543 /* WOLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */; };
 		BC0B9F320FFCD0EB007AE543 /* WOLoginItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B9F300FFCD0EB007AE543 /* WOLoginItemTests.m */; };
@@ -43,9 +42,16 @@
 		BC245F5A110343510046B11B /* NSArray+WORubyBlocksTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245F59110343510046B11B /* NSArray+WORubyBlocksTest.m */; };
 		BC245FD0110358B90046B11B /* WOUsageMeterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FCF110358B90046B11B /* WOUsageMeterTests.m */; };
 		BC245FD4110358C60046B11B /* WOUsageMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FD3110358C60046B11B /* WOUsageMeter.m */; };
+		BC245FF011035A9C0046B11B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FEF11035A9C0046B11B /* main.m */; };
+		BC24600B11035B420046B11B /* WOUsageMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245FD3110358C60046B11B /* WOUsageMeter.m */; };
+		BC24600F11035C790046B11B /* NSArray+WORubyBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BC245F52110341E30046B11B /* NSArray+WORubyBlocks.m */; };
+		BC24601211035D630046B11B /* WOObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD909F0FC20709003F2110 /* WOObject.m */; };
+		BC24601511035D780046B11B /* NSArray+WOConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0BA17F0FFD30A3007AE543 /* NSArray+WOConvenience.m */; };
+		BC246031110361580046B11B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089C1672FE841209C02AAC07 /* Foundation.framework */; };
+		BC2460C3110361780046B11B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40E85C1043668200B756BA /* SystemConfiguration.framework */; };
+		BC2460D2110361F80046B11B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2460CF110361F50046B11B /* Cocoa.framework */; };
 		BC40E83D1043176300B756BA /* WOHost.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E83C1043176300B756BA /* WOHost.m */; };
 		BC40E84A1043177600B756BA /* WOHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC40E8491043177600B756BA /* WOHostTests.m */; };
-		BC40E85D1043668200B756BA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC40E85C1043668200B756BA /* SystemConfiguration.framework */; };
 		BCBD908D0FC206FC003F2110 /* NSString+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90810FC206FC003F2110 /* NSString+WOPathUtilities.m */; };
 		BCBD908E0FC206FC003F2110 /* NSString+WOCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90850FC206FC003F2110 /* NSString+WOCreation.m */; };
 		BCBD908F0FC206FC003F2110 /* NSFileManager+WOPathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BCBD90870FC206FC003F2110 /* NSFileManager+WOPathUtilities.m */; };
@@ -116,7 +122,6 @@
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D5B49B6048680CD000E48DA /* WOPublic.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WOPublic.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItemList.h; sourceTree = "<group>"; };
@@ -140,6 +145,10 @@
 		BC245FCF110358B90046B11B /* WOUsageMeterTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WOUsageMeterTests.m; path = tests/WOUsageMeterTests.m; sourceTree = "<group>"; };
 		BC245FD2110358C60046B11B /* WOUsageMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOUsageMeter.h; sourceTree = "<group>"; };
 		BC245FD3110358C60046B11B /* WOUsageMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOUsageMeter.m; sourceTree = "<group>"; };
+		BC245FE811035A230046B11B /* Benchmarks */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Benchmarks; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC245FEC11035A410046B11B /* foundation-tool-target.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "foundation-tool-target.xcconfig"; path = "buildtools/foundation-tool-target.xcconfig"; sourceTree = "<group>"; };
+		BC245FEF11035A9C0046B11B /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = benchmarks/main.m; sourceTree = "<group>"; };
+		BC2460CF110361F50046B11B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BC40E83B1043176300B756BA /* WOHost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOHost.h; sourceTree = "<group>"; };
 		BC40E83C1043176300B756BA /* WOHost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOHost.m; sourceTree = "<group>"; };
 		BC40E8481043177600B756BA /* WOHostTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WOHostTests.h; path = tests/WOHostTests.h; sourceTree = "<group>"; };
@@ -214,8 +223,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
-				BC40E85D1043668200B756BA /* SystemConfiguration.framework in Frameworks */,
+				BC2460D2110361F80046B11B /* Cocoa.framework in Frameworks */,
+				BC2460C3110361780046B11B /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC245FE611035A230046B11B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC246031110361580046B11B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +249,7 @@
 				BCBD90660FC2069F003F2110 /* Categories */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				BCBD90690FC206BE003F2110 /* Tests */,
+				BC245FE2110359FB0046B11B /* Benchmarks */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
@@ -293,8 +311,9 @@
 		1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				089C1672FE841209C02AAC07 /* Foundation.framework */,
 				BC40E85C1043668200B756BA /* SystemConfiguration.framework */,
-				1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */,
+				BC2460CF110361F50046B11B /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -304,7 +323,6 @@
 			children = (
 				089C167FFE841241C02AAC07 /* AppKit.framework */,
 				D2F7E65807B2D6F200F64583 /* CoreData.framework */,
-				089C1672FE841209C02AAC07 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
 			sourceTree = "<group>";
@@ -313,13 +331,23 @@
 			isa = PBXGroup;
 			children = (
 				8D5B49B6048680CD000E48DA /* WOPublic.bundle */,
+				BC245FE811035A230046B11B /* Benchmarks */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BC245FE2110359FB0046B11B /* Benchmarks */ = {
+			isa = PBXGroup;
+			children = (
+				BC245FEF11035A9C0046B11B /* main.m */,
+			);
+			name = Benchmarks;
 			sourceTree = "<group>";
 		};
 		BCBD904E0FC204A2003F2110 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				BC245FEC11035A410046B11B /* foundation-tool-target.xcconfig */,
 				BC0BA05C0FFD25CD007AE543 /* base-style.xcconfig */,
 				BC0BA05E0FFD25CD007AE543 /* debug-style.xcconfig */,
 				BC0BA05D0FFD25CD007AE543 /* loadable-bundle-target.xcconfig */,
@@ -441,6 +469,22 @@
 			productReference = 8D5B49B6048680CD000E48DA /* WOPublic.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
+		BC245FE711035A230046B11B /* Benchmarks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC245FED11035A410046B11B /* Build configuration list for PBXNativeTarget "Benchmarks" */;
+			buildPhases = (
+				BC245FE511035A230046B11B /* Sources */,
+				BC245FE611035A230046B11B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Benchmarks;
+			productName = Benchmarks;
+			productReference = BC245FE811035A230046B11B /* Benchmarks */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -469,6 +513,7 @@
 				8D5B49AC048680CD000E48DA /* WOPublic */,
 				BCBD90F00FC214B0003F2110 /* WOPublic + Run tests */,
 				BCBD91300FC22E83003F2110 /* Documentation */,
+				BC245FE711035A230046B11B /* Benchmarks */,
 			);
 		};
 /* End PBXProject section */
@@ -581,6 +626,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BC245FE511035A230046B11B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC245FF011035A9C0046B11B /* main.m in Sources */,
+				BC24601511035D780046B11B /* NSArray+WOConvenience.m in Sources */,
+				BC24600F11035C790046B11B /* NSArray+WORubyBlocks.m in Sources */,
+				BC24601211035D630046B11B /* WOObject.m in Sources */,
+				BC24600B11035B420046B11B /* WOUsageMeter.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -640,6 +697,22 @@
 			};
 			name = Release;
 		};
+		BC245FEA11035A240046B11B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC245FEC11035A410046B11B /* foundation-tool-target.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = Benchmarks;
+			};
+			name = Debug;
+		};
+		BC245FEB11035A240046B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC245FEC11035A410046B11B /* foundation-tool-target.xcconfig */;
+			buildSettings = {
+				PRODUCT_NAME = Benchmarks;
+			};
+			name = Release;
+		};
 		BCBD90F10FC214B0003F2110 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -692,6 +765,15 @@
 			buildConfigurations = (
 				1DEB913F08733D840010E9CD /* Debug */,
 				1DEB914008733D840010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC245FED11035A410046B11B /* Build configuration list for PBXNativeTarget "Benchmarks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC245FEA11035A240046B11B /* Debug */,
+				BC245FEB11035A240046B11B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
