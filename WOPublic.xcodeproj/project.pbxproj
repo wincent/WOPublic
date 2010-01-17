@@ -232,7 +232,6 @@
 				BCBD90660FC2069F003F2110 /* Categories */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				BCBD90690FC206BE003F2110 /* Tests */,
-				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
@@ -316,13 +315,6 @@
 				8D5B49B6048680CD000E48DA /* WOPublic.bundle */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		32C88E010371C26100C91783 /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		BCBD904E0FC204A2003F2110 /* Configuration */ = {
