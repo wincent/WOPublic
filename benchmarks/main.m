@@ -38,6 +38,11 @@
 
 static WOUsageMeter *meter = nil;
 
+void group(const char *description)
+{
+    printf("%s\n", description);
+}
+
 void start(const char *description)
 {
     NSString *labelPadding = @"                              "; // 30 spaces
@@ -55,13 +60,18 @@ void stop(void)
     printf("%s\n", usage);
 }
 
+#define WO_ONE_MILLION 1000000
+#define WO_ONE_THOUSAND 1000
+
 int main(int argc, char *argv[])
 {
-    unsigned cycles = 1000000;
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:cycles];
-    for (unsigned i = 0, max = cycles; i < max; i++)
+#pragma mark NSArray (WORubyBlocks) benchmarks
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:WO_ONE_MILLION];
+    for (unsigned i = 0, max = WO_ONE_MILLION; i < max; i++)
         [array addObject:WO_STRING(@"object %d", i)];
 
+#pragma mark 1,000,000-element array, 1 iteration
+    group("1,000,000-element array, 1 iteration");
     start("-[NSArray map:]");
     [array map:^(id string) {
         return (id)[string stringByAppendingString:@"!"];
@@ -70,7 +80,7 @@ int main(int argc, char *argv[])
 
     start("manual enumeration");
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:[array count]];
-    for (unsigned i = 0, max = cycles; i < max; i++)
+    for (unsigned i = 0, max = WO_ONE_MILLION; i < max; i++)
     {
         NSString *string = [array objectAtIndex:i];
         [result addObject:[string stringByAppendingString:@"!"]];
@@ -83,6 +93,44 @@ int main(int argc, char *argv[])
     for (NSString *string in array)
         [result addObject:[string stringByAppendingString:@"!"]];
     (void)[result copy];
+    stop();
+
+#pragma mark 1000-element array, 1000 iterations
+    array = [NSMutableArray arrayWithCapacity:WO_ONE_THOUSAND];
+    for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
+        [array addObject:WO_STRING(@"object %d", i)];
+
+    group("1000-element array, 1000 iterations");
+    start("-[NSArray map:]");
+    for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
+    {
+        (void)[array map:^(id string) {
+            return (id)[string stringByAppendingString:@"!"];
+        }];
+    }
+    stop();
+
+    start("manual enumeration");
+    for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
+    {
+        NSMutableArray *result = [NSMutableArray arrayWithCapacity:[array count]];
+        for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
+        {
+            NSString *string = [array objectAtIndex:i];
+            [result addObject:[string stringByAppendingString:@"!"]];
+        }
+        (void)[result copy];
+    }
+    stop();
+
+    start("fast enumeration");
+    for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
+    {
+        result = [NSMutableArray arrayWithCapacity:[array count]];
+        for (NSString *string in array)
+            [result addObject:[string stringByAppendingString:@"!"]];
+        (void)[result copy];
+    }
     stop();
 
     return EXIT_SUCCESS;
