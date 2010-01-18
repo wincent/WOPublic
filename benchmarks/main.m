@@ -65,13 +65,15 @@ void stop(void)
 
 int main(int argc, char *argv[])
 {
+#pragma mark -
 #pragma mark NSArray (WORubyBlocks) benchmarks
+
+#pragma mark 1,000,000-element array, 1 iteration
+    group("1,000,000-element array, 1 iteration");
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:WO_ONE_MILLION];
     for (unsigned i = 0, max = WO_ONE_MILLION; i < max; i++)
         [array addObject:WO_STRING(@"object %d", i)];
 
-#pragma mark 1,000,000-element array, 1 iteration
-    group("1,000,000-element array, 1 iteration");
     start("-[NSArray map:]");
     [array map:^(id string) {
         return (id)[string stringByAppendingString:@"!"];
@@ -96,11 +98,11 @@ int main(int argc, char *argv[])
     stop();
 
 #pragma mark 1000-element array, 1000 iterations
+    group("1000-element array, 1000 iterations");
     array = [NSMutableArray arrayWithCapacity:WO_ONE_THOUSAND];
     for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
         [array addObject:WO_STRING(@"object %d", i)];
 
-    group("1000-element array, 1000 iterations");
     start("-[NSArray map:]");
     for (unsigned i = 0, max = WO_ONE_THOUSAND; i < max; i++)
     {
