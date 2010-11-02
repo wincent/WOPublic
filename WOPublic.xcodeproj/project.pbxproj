@@ -242,7 +242,7 @@
 		089C166AFE841209C02AAC07 /* WOPublic */ = {
 			isa = PBXGroup;
 			children = (
-				BC0BA0660FFD2603007AE543 /* buildtools */,
+				BC062A9F128079DA007BDE49 /* Submodules */,
 				BCBD90F90FC214E5003F2110 /* Dependencies */,
 				BCBD904E0FC204A2003F2110 /* Configuration */,
 				BCBD90670FC206A7003F2110 /* Headers */,
@@ -334,6 +334,14 @@
 				BC245FE811035A230046B11B /* Benchmarks */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		BC062A9F128079DA007BDE49 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				BC0BA0660FFD2603007AE543 /* buildtools */,
+			);
+			name = Submodules;
 			sourceTree = "<group>";
 		};
 		BC245FE2110359FB0046B11B /* Benchmarks */ = {
