@@ -124,6 +124,7 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		8D5B49B6048680CD000E48DA /* WOPublic.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WOPublic.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC062AA412807A26007BDE49 /* WOVersioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOVersioning.h; sourceTree = "<group>"; };
 		BC0B9F230FFCD02F007AE543 /* WOLoginItemList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOLoginItemList.h; sourceTree = "<group>"; };
 		BC0B9F240FFCD02F007AE543 /* WOLoginItemList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItemList.m; sourceTree = "<group>"; };
 		BC0B9F250FFCD02F007AE543 /* WOLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WOLoginItem.m; sourceTree = "<group>"; };
@@ -401,6 +402,7 @@
 				BCF286D210401B3C008F2449 /* WOEnumerate.h */,
 				BCBD90A00FC20709003F2110 /* WOMemory.h */,
 				BCBD90990FC20709003F2110 /* WOMemoryBarrier.h */,
+				BC062AA412807A26007BDE49 /* WOVersioning.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

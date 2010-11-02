@@ -1,7 +1,7 @@
 // WOConvenienceMacros.h
 // WOPublic
 //
-// Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2010 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -23,28 +23,6 @@
 // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
-
-//! Stringifies \p entity
-//!
-//! If \p entity is a macro then only its name will be stringified. To
-//! stringify the contents of a macro use WO_STRINGIFY_CONTENTS.
-//!
-//! This macro is guarded to avoid clashes with identical macros in other
-//! products.
-#ifndef WO_STRINGIFY
-#define WO_STRINGIFY(entity) #entity
-#endif
-
-//! Double-stringifies \p macro
-//!
-//! If \p is a macro, stringifies the contents of the macro; if \p is not a
-//! macro, merely stringifies it.
-//!
-//! This macro is guarded to avoid clashes with identical macros in other
-//! products.
-#ifndef WO_STRINGIFY_CONTENTS
-#define WO_STRINGIFY_CONTENTS(entity) WO_STRINGIFY(entity)
-#endif
 
 //! Mark symbols for export
 //!
