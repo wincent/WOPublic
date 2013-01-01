@@ -1,7 +1,7 @@
 // WOLoginItemList.m
 // WOPublic
 //
-// Copyright 2007-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2007-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -56,7 +56,7 @@
         items = [NSMutableArray array];
         listRef = LSSharedFileListCreate(NULL, options, NULL);
         if (!listRef)
-            return items;
+            return nil;
         CFMakeCollectable(listRef);
         global = (options == kLSSharedFileListGlobalLoginItems);
         [self refreshList];
