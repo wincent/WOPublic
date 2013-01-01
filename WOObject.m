@@ -1,7 +1,7 @@
 // WOObject.m
 // WOPublic
 //
-// Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -27,9 +27,5 @@
 // class header
 #import "WOObject.h"
 
-// macro headers
-#import "WOConvenienceMacros.h"
-
 @implementation WOObject
-WO_CLASS_EXPORT(WOObject);
 @end

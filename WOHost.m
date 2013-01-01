@@ -1,7 +1,7 @@
 // WOHost.m
 // WOPublic
 //
-// Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -31,12 +31,10 @@
 #import <libkern/OSAtomic.h>        /* OSAtomicIncrement32Barrier() */
 
 // macro headers
-#import "WOConvenienceMacros.h"
 #import "WODebugMacros.h"
 
 // other class headers
 #import "WOLogManager.h"
-
 
 #pragma mark -
 #pragma mark Class variables
@@ -106,7 +104,6 @@ void WOHostReachabilityCallback(SCNetworkReachabilityRef aRef, SCNetworkConnecti
 }
 
 @implementation WOHost
-WO_CLASS_EXPORT(WOHost);
 
 #pragma mark -
 #pragma mark Shared host registry

@@ -1,7 +1,7 @@
 // WOHost.h
 // WOPublic
 //
-// Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -30,6 +30,9 @@
 // superclass header
 #import "WOObject.h"
 
+// macro headers
+#import "WOConvenienceMacros.h"
+
 //! The WOHost class uses functions from the SystemConfiguration framework to
 //! test for host reachability. For efficiency it caches host reachability
 //! information and updates that information on demand by using a
@@ -49,7 +52,7 @@
 //!     - SystemConfiguration
 //!
 //! \sa http://developer.apple.com/samplecode/SimpleReach/SimpleReach.html
-@interface WOHost : WOObject {
+WO_CLASS_EXPORT @interface WOHost : WOObject {
 
     NSString                        *hostName;
     BOOL                            reachable;

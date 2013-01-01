@@ -1,7 +1,7 @@
 // WOProcessManager.h
 // WOPublic
 //
-// Copyright 2003-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2003-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -24,7 +24,11 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
+// superclass header
 #import "WOObject.h"
+
+// macro header
+#import "WOConvenienceMacros.h"
 
 @class WOProcessSerialNumber;
 
@@ -36,7 +40,7 @@
 //!
 //! \note The singleton pattern implemented by WOProcessManager is not designed
 //! with subclassing in mind; unpredictable results may occur if subclassed.
-@interface WOProcessManager : WOObject {
+WO_CLASS_EXPORT @interface WOProcessManager : WOObject {
 
     WOProcessSerialNumber *noProcess;
 

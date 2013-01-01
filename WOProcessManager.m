@@ -1,7 +1,7 @@
 // WOProcessManager.m
 // WOPublic
 //
-// Copyright 2003-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2003-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -28,7 +28,6 @@
 #import "WOProcessManager.h"
 
 // macro headers
-#import "WOConvenienceMacros.h"
 #import "WODebugMacros.h"
 #import "WOMemory.h"
 #import "WOMemoryBarrier.h"
@@ -45,7 +44,6 @@ static WOProcessManager *WOSharedProcessManager = nil;
 #pragma mark -
 
 @implementation WOProcessManager
-WO_CLASS_EXPORT(WOProcessManager);
 
 #pragma mark -
 #pragma mark Singleton shared instance

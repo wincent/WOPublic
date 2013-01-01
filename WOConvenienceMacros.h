@@ -1,7 +1,7 @@
 // WOConvenienceMacros.h
 // WOPublic
 //
-// Copyright 2004-2010 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -34,19 +34,11 @@
 
 //! Mark classes for export
 //!
-//! This macro, if included inside a class implementation, prevents the
-//! corresponding .objc_class_name symbol from being stripped by dead-code
-//! stripping. This is useful when combining dead-code stripping with the
-//! BUNDLE_LOADER build setting.
-//!
-//! \param class The class whose name should be protected from dead-code
-//! stripping. The use of the WO_STRINGIFY macro (effectively
-//! double-stringifying) ensures that even if \p class is a macro (as is the
-//! case when using an obfuscation header) the macro contents will be
-//! stringified rather than the name of the macro itself; if \p class is not a
-//! macro then it will be stringified normally.
-#define WO_CLASS_EXPORT(class) \
-        __asm__ (".no_dead_strip .objc_class_name_" WO_STRINGIFY(class) "\n");
+//! This macro, if placed at the beginning of an interface declaration, prevents
+//! the corresponding _OBJC_CLASS_$_ and _OBJC_METACLASS_$_ symbols from being
+//! stripped by dead-code stripping. This is useful when combining dead-code
+//! stripping with the BUNDLE_LOADER build setting.
+#define WO_CLASS_EXPORT __attribute__((visibility("default")))
 
 #define WO_INLINE static inline __attribute__((always_inline))
 

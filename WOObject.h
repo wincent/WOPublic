@@ -1,7 +1,7 @@
 // WOObject.h
 // WOPublic
 //
-// Copyright 2004-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2004-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -27,7 +27,10 @@
 // system header
 #import <Foundation/Foundation.h>
 
-@interface WOObject : NSObject {
+// macro header
+#import "WOConvenienceMacros.h"
+
+WO_CLASS_EXPORT @interface WOObject : NSObject {
 }
 
 @end
