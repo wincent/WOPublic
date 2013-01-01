@@ -1,7 +1,7 @@
 // WOMemory.h
 // WOPublic
 //
-// Copyright 2007-2009 Wincent Colaiuta. All rights reserved.
+// Copyright 2007-2013 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -30,7 +30,7 @@ static inline void *emalloc(size_t size)
 {
     void *buffer = malloc(size);
     if (!buffer && errno == ENOMEM)
-        [NSException raise:NSMallocException format:@"malloc of %d bytes failed", size];
+        [NSException raise:NSMallocException format:@"malloc of %zu bytes failed", size];
     return buffer;
 }
 
