@@ -1,7 +1,7 @@
 // WOProcessManager.m
 // WOPublic
 //
-// Copyright 2003-2013 Wincent Colaiuta. All rights reserved.
+// Copyright 2003-2014 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -208,7 +208,6 @@ static WOProcessManager *WOSharedProcessManager = nil;
             [WOLog err:@"CopyProcessName returned %d", status];
             break;
         }
-        WOMakeCollectable(processName);
 
         if ([name isEqualToString:(NSString *)processName])
             found = YES;

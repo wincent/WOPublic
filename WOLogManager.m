@@ -495,7 +495,7 @@ WOLogManager *WOSharedLogManager = nil;
     FSRef folderRef;
     OSErr err = FSFindFolder(domain, kLogsFolderType, kCreateFolder, &folderRef);
     if (err == noErr)
-        logsPath = [NSMakeCollectable(CFURLCreateFromFSRef(kCFAllocatorDefault, &folderRef)) path];
+        logsPath = [(NSURL *)CFBridgingRelease(CFURLCreateFromFSRef(kCFAllocatorDefault, &folderRef)) path];
     else
         NSLog(@"FSFinderFolder error (%d)", err);
     return logsPath;

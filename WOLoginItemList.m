@@ -1,7 +1,7 @@
 // WOLoginItemList.m
 // WOPublic
 //
-// Copyright 2007-2013 Wincent Colaiuta. All rights reserved.
+// Copyright 2007-2014 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -57,7 +57,6 @@
         listRef = LSSharedFileListCreate(NULL, options, NULL);
         if (!listRef)
             return nil;
-        CFMakeCollectable(listRef);
         global = (options == kLSSharedFileListGlobalLoginItems);
         [self refreshList];
     }
@@ -86,7 +85,7 @@
     if (items.count > 0)
         [items removeAllObjects];
     UInt32 seed;
-    CFArrayRef array = WOMakeCollectable(LSSharedFileListCopySnapshot(listRef, &seed));
+    CFArrayRef array = LSSharedFileListCopySnapshot(listRef, &seed);
     for (CFIndex i = 0, max = CFArrayGetCount(array); i < max; i++)
     {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(array, i);
@@ -172,18 +171,6 @@
     BOOL success = [anItem addToList:listRef];
     [self refreshList];
     return success;
-}
-
-#pragma mark -
-#pragma mark NSFastEnumeration protocol
-
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state
-                                  objects:(id *)stackbuf
-                                    count:(NSUInteger)len
-{
-    return [self.items countByEnumeratingWithState:state
-                                           objects:stackbuf
-                                             count:len];
 }
 
 #pragma mark -

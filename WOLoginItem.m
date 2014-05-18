@@ -1,7 +1,7 @@
 // WOLoginItem.m
 // WOPublic
 //
-// Copyright 2007-2013 Wincent Colaiuta. All rights reserved.
+// Copyright 2007-2014 Wincent Colaiuta. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are met:
@@ -85,8 +85,8 @@
     if ((self = [super init]))
     {
         itemRef = aRef;
-        name = [NSMakeCollectable(LSSharedFileListItemCopyDisplayName(aRef)) copy];
-        CFBooleanRef isHidden = WOMakeCollectable(LSSharedFileListItemCopyProperty(aRef, kLSSharedFileListItemHidden));
+        name = [(NSString *)CFBridgingRelease(LSSharedFileListItemCopyDisplayName(aRef)) copy];
+        CFBooleanRef isHidden = LSSharedFileListItemCopyProperty(aRef, kLSSharedFileListItemHidden);
         hidden = (isHidden == kCFBooleanTrue);
         global = isGlobal;
         CFURLRef URL;
@@ -121,11 +121,10 @@
     CFDictionaryRef properties  = CFDictionaryCreate(NULL, (void *)keys, (void *)values, 1, NULL, NULL);
     if (!properties)
         return NO;
-    CFMakeCollectable(properties);
-    CFURLRef URL = WOMakeCollectable(CFURLCreateWithFileSystemPath(NULL,
-        (CFStringRef)self.path, kCFURLPOSIXPathStyle, false));
-    itemRef = (LSSharedFileListItemRef)WOMakeCollectable(LSSharedFileListInsertItemURL(listRef,
-        kLSSharedFileListItemLast, NULL, NULL, URL, properties, NULL));
+    CFURLRef URL = CFURLCreateWithFileSystemPath(NULL,
+        (CFStringRef)self.path, kCFURLPOSIXPathStyle, false);
+    itemRef = (LSSharedFileListItemRef)LSSharedFileListInsertItemURL(listRef,
+        kLSSharedFileListItemLast, NULL, NULL, URL, properties, NULL);
     return (itemRef != NULL);
 }
 
