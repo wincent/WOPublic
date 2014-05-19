@@ -63,6 +63,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    WOCFRelease(listRef);
+}
+
 + (WOLoginItemList *)loginItems:(CFTypeRef)options
 {
     // cast needed here or compiler thinks alloc returns an NSPointerFunctions or NSPointerArray instance
@@ -98,6 +103,7 @@
         if (login)
             [items addObject:login];
     }
+    CFRelease(array);
 }
 
 - (NSArray *)itemsWithName:(NSString *)aName

@@ -211,6 +211,7 @@ static WOProcessManager *WOSharedProcessManager = nil;
 
         if ([name isEqualToString:(NSString *)processName])
             found = YES;
+        CFRelease(processName);
     }
     if (!(err == procNotFound || err == noErr))
         [WOLog err:@"GetNextProcess returned %d", err];
