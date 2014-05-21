@@ -53,11 +53,11 @@
 {
     if ((self = [super init]))
     {
-        items = [NSMutableArray array];
-        listRef = LSSharedFileListCreate(NULL, options, NULL);
-        if (!listRef)
+        self->items = [NSMutableArray array];
+        self->listRef = LSSharedFileListCreate(NULL, options, NULL);
+        if (!self->listRef)
             return nil;
-        global = (options == kLSSharedFileListGlobalLoginItems);
+        self->global = (options == kLSSharedFileListGlobalLoginItems);
         [self refreshList];
     }
     return self;
@@ -94,7 +94,7 @@
     for (CFIndex i = 0, max = CFArrayGetCount(array); i < max; i++)
     {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(array, i);
-        WOLoginItem *login = self.global ?
+        WOLoginItem *login = global ?
             [WOLoginItem globalLoginItemWithRef:item] :
             [WOLoginItem sessionLoginItemWithRef:item];
 
