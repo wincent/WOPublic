@@ -61,10 +61,10 @@
     WOParameterCheck(aPath != nil);
     if ((self = [super init]))
     {
-        name    = [aName copy];
-        path    = [aPath copy];
-        hidden  = isHidden;
-        global  = isGlobal;
+        self->name    = [aName copy];
+        self->path    = [aPath copy];
+        self->hidden  = isHidden;
+        self->global  = isGlobal;
     }
     return self;
 }
@@ -84,12 +84,12 @@
     NSParameterAssert(aRef != NULL);
     if ((self = [super init]))
     {
-        itemRef = aRef;
-        name = [(NSString *)CFBridgingRelease(LSSharedFileListItemCopyDisplayName(aRef)) copy];
+        self->itemRef = aRef;
+        self->name = [(NSString *)CFBridgingRelease(LSSharedFileListItemCopyDisplayName(aRef)) copy];
         CFBooleanRef isHidden = LSSharedFileListItemCopyProperty(aRef, kLSSharedFileListItemHidden);
-        hidden = (isHidden == kCFBooleanTrue);
+        self->hidden = (isHidden == kCFBooleanTrue);
         CFRelease(isHidden);
-        global = isGlobal;
+        self->global = isGlobal;
         CFURLRef URL;
         OSStatus err = LSSharedFileListItemResolve(aRef, 0, &URL, NULL);
         if (err == fnfErr)
@@ -103,12 +103,12 @@
             [WOLog err:@"LSSharedFileListItemResolve" no:err];
             return nil;
         }
-        WOCFRelease(URL);
         UInt8 *buff = (UInt8 *)emalloc(MAXPATHLEN);
         if (!CFURLGetFileSystemRepresentation(URL, true, buff, MAXPATHLEN))
             [WOLog err:@"CFURLGetFileSystemRepresentation returned false"];
         else
-            path = [NSString stringWithUTF8String:(const char *)buff];
+            self->path = [NSString stringWithUTF8String:(const char *)buff];
+        WOCFRelease(URL);
         free(buff);
     }
     return self;
