@@ -84,7 +84,7 @@
     NSParameterAssert(aRef != NULL);
     if ((self = [super init]))
     {
-        self->itemRef = aRef;
+        self->itemRef = CFRetain(aRef);
         self->name = [(NSString *)CFBridgingRelease(LSSharedFileListItemCopyDisplayName(aRef)) copy];
         CFBooleanRef isHidden = LSSharedFileListItemCopyProperty(aRef, kLSSharedFileListItemHidden);
         self->hidden = (isHidden == kCFBooleanTrue);
@@ -114,6 +114,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    WOCFRelease(itemRef);
+}
+
 - (BOOL)addToList:(LSSharedFileListRef)listRef
 {
     NSParameterAssert(listRef != NULL);
@@ -124,12 +129,12 @@
         return NO;
     CFURLRef URL = CFURLCreateWithFileSystemPath(NULL,
         (CFStringRef)self.path, kCFURLPOSIXPathStyle, false);
-    itemRef = (LSSharedFileListItemRef)LSSharedFileListInsertItemURL(listRef,
+    LSSharedFileListItemRef newRef = (LSSharedFileListItemRef)LSSharedFileListInsertItemURL(listRef,
         kLSSharedFileListItemLast, NULL, NULL, URL, properties, NULL);
-    BOOL success = itemRef != NULL;
+    BOOL success = newRef != NULL;
     CFRelease(properties);
     CFRelease(URL);
-    CFRelease(itemRef);
+    CFRelease(newRef);
     return success;
 }
 
@@ -140,10 +145,10 @@
 {
     return [NSString stringWithFormat:@"<WOLoginItem %p: properties => {name: %@, path: %@, hidden: %@, global: %@}>",
             self,
-            self.name ? self.name : @"<unset>",
-            self.path ? self.path : @"<unset>",
-            WO_STRING_FROM_BOOL(self.hidden),
-            WO_STRING_FROM_BOOL(self.global)];
+            name ? name : @"<unset>",
+            path ? path : @"<unset>",
+            WO_STRING_FROM_BOOL(hidden),
+            WO_STRING_FROM_BOOL(global)];
 }
 
 #pragma mark -
