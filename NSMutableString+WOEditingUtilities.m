@@ -34,10 +34,10 @@ WO_CATEGORY_MARKER(NSMutableString, WOEditingUtilities);
 {
     if (!aSet)
         return;
-    unsigned length = self.length;
+    NSUInteger length = self.length;
     if (length == 0)
         return;
-    for (unsigned i = length; i > 0; i--) // loop backwards through string for safe deletion
+    for (NSUInteger i = length; i > 0; i--) // loop backwards through string for safe deletion
     {
         if ([aSet characterIsMember:[self characterAtIndex:i - 1]])
             [self deleteCharactersInRange:NSMakeRange(i - 1, 1)];
