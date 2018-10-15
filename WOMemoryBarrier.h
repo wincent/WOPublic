@@ -88,7 +88,7 @@
 //!
 //! \code
 //! shared_instance = alloc_instance();
-//! \encode
+//! \endcode
 //!
 //! Is in actuality a two-step process:
 //!
@@ -98,7 +98,7 @@
 //!
 //! // make "shared_instance" point at allocated instance
 //! shared_instance = instance;
-//! \encode
+//! \endcode
 //!
 //! On a single-processor machine with a single cache there are no problems with
 //! this non-atomicity because the CPU will always see these events as being in
