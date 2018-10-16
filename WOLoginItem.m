@@ -88,7 +88,9 @@
         self->name = [(NSString *)CFBridgingRelease(LSSharedFileListItemCopyDisplayName(aRef)) copy];
         CFBooleanRef isHidden = LSSharedFileListItemCopyProperty(aRef, kLSSharedFileListItemHidden);
         self->hidden = (isHidden == kCFBooleanTrue);
-        CFRelease(isHidden);
+        if (isHidden) {
+            CFRelease(isHidden);
+        }
         self->global = isGlobal;
         CFURLRef URL;
         OSStatus err = LSSharedFileListItemResolve(aRef, 0, &URL, NULL);
